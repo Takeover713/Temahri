@@ -47,8 +47,7 @@ function init_gear_sets()
 	
     sets.buff.Sublimation = {waist="Embla Sash"}
     sets.buff.DTSublimation = {waist="Embla Sash"}
-	sets.buff.Sleep = {main="Prime Maul"}
-	
+	sets.WakeUpWeapons = {main="Prime Maul"}
     -- Precast Sets
 
     -- Fast cast sets for spells

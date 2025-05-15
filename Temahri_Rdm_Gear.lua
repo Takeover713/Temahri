@@ -52,6 +52,7 @@ function init_gear_sets()
 	sets.weapons.Odin = {main="Qutrub Knife",sub="Ceremonial Dagger"}
 	sets.weapons.Naegling = {main="Naegling",sub="Thibron"}	-- sub="Tauret"
 	sets.weapons.BlackHalo = {main="Maxentius", sub="Thibron"}
+	sets.WakeUpWeapons = {main="Prime Sword"}
 	
 	-- Precast Sets
 	organizer_items = {}

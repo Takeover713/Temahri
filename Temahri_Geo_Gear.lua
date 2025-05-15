@@ -79,7 +79,7 @@ function init_gear_sets()
 	
 	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
 	sets.buff.Entrust = {}
-	sets.buff.Sleep = {main="Prime Maul"}
+	sets.WakeUpWeapons = {main="Prime Maul"}
 	
 	-- Fast cast sets for spells
 
