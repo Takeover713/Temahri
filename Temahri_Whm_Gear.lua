@@ -180,109 +180,20 @@ function init_gear_sets()
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
 		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
+		-- waist="Shinjutsu-no-obi +1", --needs augments, Lustreless Scale
 		left_ear="Magnetic Earring",
 		right_ear="Glorious Earring",
 		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
+		right_ring="Mephitas's Ring +1", -- needs augments, Lustreless Hide
 		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
 }
 
-		
-	sets.midcast.CureSolace = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
-
-	sets.midcast.LightWeatherCure = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
-
-	sets.midcast.LightWeatherCureSolace = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
-		
-	sets.midcast.LightDayCureSolace = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
-
-	sets.midcast.LightDayCure = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
+	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{})
+	sets.midcast.LightWeatherCure = set_combine(sets.midcast.Cure,{})
+	sets.midcast.LightWeatherCureSolace = set_combine(sets.midcast.Cure,{})
+	sets.midcast.LightDayCureSolace = set_combine(sets.midcast.Cure,{})
+	sets.midcast.LightDayCure = set_combine(sets.midcast.Cure,{})
+	sets.midcast.Cure.DT = set_combine(sets.midcast.Cure,{})
 
 	sets.midcast.Curaga = {
 		main="Raetic Rod +1",
@@ -295,70 +206,16 @@ function init_gear_sets()
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
 		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
+		-- waist="Shinjutsu-no-obi +1", --needs augments, Lustreless Scale
 		left_ear="Magnetic Earring",
 		right_ear="Glorious Earring",
 		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
+		right_ring="Mephitas's Ring +1", --needs augments, Lustreless Hide
 		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}}, -- back={ name="Mending Cape", augments={'Healing magic skill +4','Enha.mag. skill +1','Mag. Acc.+5','"Cure" potency +4%',}},
 }
 		
-	sets.midcast.LightWeatherCuraga = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Theo. Bliaut +2",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}}, -- back={ name="Mending Cape", augments={'Healing magic skill +4','Enha.mag. skill +1','Mag. Acc.+5','"Cure" potency +4%',}},
-}
-		
-	sets.midcast.LightDayCuraga = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Theo. Bliaut +2",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}}, -- back={ name="Mending Cape", augments={'Healing magic skill +4','Enha.mag. skill +1','Mag. Acc.+5','"Cure" potency +4%',}},
-}
-
-	sets.midcast.Cure.DT = {
-		main="Raetic Rod +1",
-		sub="Thuellaic Ecu +1",
-		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
-		legs="Ebers Pant. +3",
-		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
-		neck={ name="Clr. Torque +2", augments={'Path: A',}},
-		waist="Austerity Belt",
-		-- waist="Shinjutsu-no-obi +1",
-		left_ear="Magnetic Earring",
-		right_ear="Glorious Earring",
-		left_ring="Naji's Loop",
-		right_ring="Mephitas's Ring +1", -- needs augments
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
-}
+	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga,{})
+	sets.midcast.LightDayCuraga = set_combine(sets.midcast.Curaga,{})
 		
 	--Melee Curesets are used whenever your Weapons state is set to anything but None.
 	sets.midcast.MeleeCure = {}
