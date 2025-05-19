@@ -87,7 +87,7 @@ function init_gear_sets()
 		back={ name="Sucellos's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',}},
 }
 		
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Crepuscular Cloak"})
        
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -471,10 +471,22 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {})
 		
-	sets.midcast.Impact = {main="Oranyan",sub="Enki Strap",ammo="Regal Gem",
-		head=empty,neck="Erra Pendant",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Twilight Cloak",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
-		back="Sucellos's Cape",waist="Luminary Sash",legs="Merlinic Shalwar",feet=gear.merlinic_nuke_feet}
+	sets.midcast.Impact = { 
+	main="Maxentius",
+    sub="Ammurapi Shield",
+	ammo="Regal Gem",
+    --range="Ullr",
+    neck="Null Loop",
+    ear1="Malignance Earring",
+    ear2="Snotra Earring",
+    body="Crepuscular Cloak",
+    hands="Leth. Ganth. +3",
+    ring1="Metamor. Ring +1",
+    ring2="Stikini Ring +1",
+    back="Null Shawl",
+    waist="Null Belt",
+    legs="Leth. Fuseau +3",
+    feet="Leth. Houseaux +3"}
 
 	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
 		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Regal Earring",ear2="Digni. Earring",
