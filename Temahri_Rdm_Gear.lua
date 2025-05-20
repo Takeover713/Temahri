@@ -11,15 +11,6 @@ function user_job_setup()
 	
 	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat'}
 	autowstp = 1250
-	
-	gear.obi_cure_back = "Tempered Cape +1"
-	gear.obi_cure_waist = "Witful Belt"
-
-	gear.obi_low_nuke_back = "Toro Cape"
-	gear.obi_low_nuke_waist = "Sekhmet Corset"
-
-	gear.obi_high_nuke_back = "Toro Cape"
-	gear.obi_high_nuke_waist = "Refoccilation Stone"
 
 		-- Additional local binds
 	send_command('bind ^` gs c cycle ElementalMode')
@@ -53,6 +44,85 @@ function init_gear_sets()
 	sets.weapons.Naegling = {main="Naegling",sub="Thibron"}	-- sub="Tauret"
 	sets.weapons.BlackHalo = {main="Maxentius", sub="Thibron"}
 	sets.WakeUpWeapons = {main="Prime Sword"}
+	
+	-- Idle sets
+	
+	sets.idle = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Homiliary",
+		head="Viti. Chapeau +3",
+		body="Lethargy Sayon +3",
+		hands="Leth. Ganth. +3",   	--Malignance Gloves
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Loricate Torque +1",
+		waist="Fucho-no-Obi",
+		left_ear="Hearty Earring",
+		right_ear="Etiolation Earring",
+		left_ring="Defending Ring",
+		right_ring="Vocane Ring +1",
+		back="Solemnity Cape",
+}
+	
+	-- sets.idle = {
+		-- main="Daybreak",
+		-- sub="Genmei Shield",
+		-- ammo="Staunch Tathlum +1",
+		-- head="Malignance Chapeau",
+		-- body="Malignance Tabard",
+		-- hands="Vitiation Gloves +1",   	--Malignance Gloves
+		-- legs="Malignance Tights",
+		-- feet="Malignance Boots",
+		-- neck="Loricate Torque +1",
+		-- waist="Fucho-no-Obi",
+		-- left_ear="Hearty Earring",
+		-- right_ear="Etiolation Earring",
+		-- left_ring="Defending Ring",
+		-- right_ring="Vocane Ring +1",
+		-- back="Solemnity Cape",
+-- }
+
+	-- sets.idle = {
+        -- main="Daybreak",
+		-- sub="Genmei Shield",
+		-- ammo="Homiliary",
+		-- head="Viti. Chapeau +3",
+		-- body="Lethargy Sayon +3",
+		-- hands=gear.Chironic_R_hands,
+		-- legs={ name="Chironic Hose", augments={'"Fast Cast"+2','INT+5','"Refresh"+1','Accuracy+20 Attack+20','Mag. Acc.+3 "Mag.Atk.Bns."+3',}},
+		-- feet={ name="Chironic Slippers", augments={'INT+5','"Repair" potency +5%','"Refresh"+1',}},
+		-- neck="Loricate Torque +1",
+		-- waist="Plat. Mog. Belt",
+		-- left_ear="Etiolation Earring",
+		-- right_ear="Ethereal Earring",
+		-- left_ring="Defending Ring",
+        -- right_ring={name="Stikini Ring +1", bag="wardrobe3"},
+		-- back=gear.RDM_MND_Cape,
+        -- }
+
+sets.idle.Refresh = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+		neck="Loricate Torque +1",
+		waist="Fucho-no-Obi",
+		left_ear="Hearty Earring",
+		right_ear="Etiolation Earring",
+		left_ring="Defending Ring",
+		right_ring="Vocane Ring +1",
+		back="Solemnity Cape",
+}
+		
+	sets.idle.PDT = {}	
+	sets.idle.MDT = {}	
+	sets.idle.Weak = {}
+	sets.idle.DTHippo = set_combine(sets.idle.PDT, {})
 	
 	-- Precast Sets
 	organizer_items = {}
@@ -535,89 +605,7 @@ function init_gear_sets()
 		head="Viti. Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Sheltered Ring",
 		back="Umbra Cape",waist="Flume Belt",legs="Lengo Pants",feet=gear.chironic_refresh_feet}
-	
 
-	-- Idle sets
-	
-	sets.idle = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Viti. Chapeau +3",
-		body="Lethargy Sayon +3",
-		hands="Leth. Ganth. +3",   	--Malignance Gloves
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Loricate Torque +1",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Etiolation Earring",
-		left_ring="Defending Ring",
-		right_ring="Vocane Ring +1",
-		back="Solemnity Cape",
-}
-	
-	-- sets.idle = {
-		-- main="Daybreak",
-		-- sub="Genmei Shield",
-		-- ammo="Staunch Tathlum +1",
-		-- head="Malignance Chapeau",
-		-- body="Malignance Tabard",
-		-- hands="Vitiation Gloves +1",   	--Malignance Gloves
-		-- legs="Malignance Tights",
-		-- feet="Malignance Boots",
-		-- neck="Loricate Torque +1",
-		-- waist="Fucho-no-Obi",
-		-- left_ear="Hearty Earring",
-		-- right_ear="Etiolation Earring",
-		-- left_ring="Defending Ring",
-		-- right_ring="Vocane Ring +1",
-		-- back="Solemnity Cape",
--- }
-
-	-- sets.idle = {
-        -- main="Daybreak",
-		-- sub="Genmei Shield",
-		-- ammo="Homiliary",
-		-- head="Viti. Chapeau +3",
-		-- body="Lethargy Sayon +3",
-		-- hands=gear.Chironic_R_hands,
-		-- legs={ name="Chironic Hose", augments={'"Fast Cast"+2','INT+5','"Refresh"+1','Accuracy+20 Attack+20','Mag. Acc.+3 "Mag.Atk.Bns."+3',}},
-		-- feet={ name="Chironic Slippers", augments={'INT+5','"Repair" potency +5%','"Refresh"+1',}},
-		-- neck="Loricate Torque +1",
-		-- waist="Plat. Mog. Belt",
-		-- left_ear="Etiolation Earring",
-		-- right_ear="Ethereal Earring",
-		-- left_ring="Defending Ring",
-        -- right_ring={name="Stikini Ring +1", bag="wardrobe3"},
-		-- back=gear.RDM_MND_Cape,
-        -- }
-
-sets.idle.Refresh = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
-		neck="Loricate Torque +1",
-		waist="Fucho-no-Obi",
-		left_ear="Hearty Earring",
-		right_ear="Etiolation Earring",
-		left_ring="Defending Ring",
-		right_ring="Vocane Ring +1",
-		back="Solemnity Cape",
-}
-		
-	sets.idle.PDT = {}
-		
-	sets.idle.MDT = {}
-		
-	sets.idle.Weak = {}
-	
-	sets.idle.DTHippo = set_combine(sets.idle.PDT, {})
 	
 	-- Defense sets
 	sets.defense.PDT = {}
