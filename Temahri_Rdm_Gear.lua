@@ -208,6 +208,23 @@ function init_gear_sets()
         -- waist="Acuity Belt +1",
         -- }
 		
+	sets.midcast.Impact = { 
+		main="Maxentius",
+		sub="Ammurapi Shield",
+		ammo="Regal Gem",
+		--range="Ullr",
+		neck="Null Loop",
+		ear1="Malignance Earring",
+		ear2="Snotra Earring",
+		body="Crepuscular Cloak",
+		hands="Leth. Ganth. +3",
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring +1",
+		back="Null Shawl",
+		waist="Null Belt",
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3"}
+		
 	sets.RecoverBurst = {head="Ea Hat",neck="Mizu. Kubikazari",body="Seidr Cotehardie",hands="Amalric Gages +1",ring1="Mujin Band",legs="Ea Slops",feet="Jhakri Pigaches +2"}
 	
 	-- Gear for specific elemental nukes.
@@ -461,32 +478,13 @@ function init_gear_sets()
         -- waist="Acuity Belt +1",
         -- }
 		
-    sets.midcast['Elemental Magic'].Resistant = {}
-		
+    sets.midcast['Elemental Magic'].Resistant = {}	
     sets.midcast['Elemental Magic'].Fodder = {}
-
     sets.midcast['Elemental Magic'].Proc = {}
 		
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
 	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 	sets.midcast['Elemental Magic'].HighTierNuke.Fodder = set_combine(sets.midcast['Elemental Magic'].Fodder, {})
-		
-	sets.midcast.Impact = { 
-	main="Maxentius",
-    sub="Ammurapi Shield",
-	ammo="Regal Gem",
-    --range="Ullr",
-    neck="Null Loop",
-    ear1="Malignance Earring",
-    ear2="Snotra Earring",
-    body="Crepuscular Cloak",
-    hands="Leth. Ganth. +3",
-    ring1="Metamor. Ring +1",
-    ring2="Stikini Ring +1",
-    back="Null Shawl",
-    waist="Null Belt",
-    legs="Leth. Fuseau +3",
-    feet="Leth. Houseaux +3"}
 
 	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
 		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Regal Earring",ear2="Digni. Earring",
@@ -613,40 +611,22 @@ sets.idle.Refresh = {
 		back="Solemnity Cape",
 }
 		
-	sets.idle.PDT = {main="Terra's Staff",sub="Oneiros Grip",ammo="Staunch Tathlum +1 +1",
-		head="Viti. Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Emet Harness +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Gende. Galosh. +1"}
+	sets.idle.PDT = {}
 		
-	sets.idle.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Staunch Tathlum +1 +1",
-		head="Viti. Chapeau +3",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Engulfer Cape +1",waist="Flume Belt",legs="Hagondes Pants +1",feet="Gende. Galosh. +1"}
+	sets.idle.MDT = {}
 		
-	sets.idle.Weak = {main="Bolelabunga",sub="Genmei Shield",ammo="Homiliary",
-		head="Viti. Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Dark Ring",
-		back="Umbra Cape",waist="Flume Belt",legs="Lengo Pants",feet=gear.chironic_refresh_feet}
+	sets.idle.Weak = {}
 	
-	sets.idle.DTHippo = set_combine(sets.idle.PDT, {back="Umbra Cape",legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
+	sets.idle.DTHippo = set_combine(sets.idle.PDT, {})
 	
 	-- Defense sets
-	sets.defense.PDT = {main="Terra's Staff",sub="Umbra Strap",ammo="Impatiens",
-		head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		body="Emet Harness +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Gende. Galosh. +1"}
+	sets.defense.PDT = {}
 
 	sets.defense.NukeLock = sets.midcast['Elemental Magic']
 		
-	sets.defense.MDT = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
-		head="Hagondes Hat +1",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Gende. Galosh. +1"}
+	sets.defense.MDT = {}
 		
-    sets.defense.MEVA = {main="Terra's Staff",sub="Enki Strap",ammo="Pemphredo Tathlum",
-        head=empty,neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		body="Respite Cloak",hands="Telchine Gloves",ring1="Vengeful Ring",Ring2="Purity Ring",
-        back="Sucellos's Cape",waist="Luminary Sash",legs="Leth. Fuseau +3",feet="Telchine Pigaches"}
+    sets.defense.MEVA = {}
 		
 	sets.idle.TPEat = set_combine(sets.idle, {})
 
@@ -723,15 +703,9 @@ sets.idle.Refresh = {
 }
 		
 		
-	sets.engaged.PhysicalDef = {ammo="Ginsen",
-		head="Viti. Chapeau +3",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Emet Harness +1",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
+	sets.engaged.PhysicalDef = {}
 		
-	sets.engaged.MagicalDef = {ammo="Ginsen",
-		head="Vitiation Chapeau +3",neck="Loricate Torque +1",ear1="Cessance Earring",ear2="Brutal Earring",
-		body="Vrikodara Jupon",hands="Hagondes Cuffs +1",ring1="Defending Ring",ring2="Dark Ring",
-		back="Moonlight Cape",waist="Flume Belt",legs="Hagondes Pants +1",feet="Battlecast Gaiters"}
+	sets.engaged.MagicalDef = {}
 
 end
 
