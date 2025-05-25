@@ -48,7 +48,7 @@ function init_gear_sets()
 	
 	-- Weapons sets --
 	sets.weapons.Aeneas = {main="Aeneas",sub="Taming Sari"}
-	sets.weapons.Trials = {main="Peeler",sub="Empty"}
+	sets.weapons.Trials = {main="Kartika",sub="Empty"}
 	
 	------------------------------
 	  ------ Idle sets ------
@@ -83,10 +83,10 @@ function init_gear_sets()
 	
 	--45%/Max Magic Haste (0% Dual Wield needed)
     sets.engaged = {
-		--ammo="Aurgelmir Orb +1",
+		ammo="", --ammo="Aurgelmir Orb +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
-		 --hands="Malignance Gloves",
+		hand="", --hands="Malignance Gloves",
 		legs="Gleti's Breeches",
 		feet="Malignance Boots",
 		--neck="Etoile Gorget +2",
@@ -280,15 +280,15 @@ end
 function select_default_macro_book()
     -- Default macro set/book
     if player.sub_job == 'WAR' then
-        set_macro_page(1, 19)
+        set_macro_page(1, 16)
     elseif player.sub_job == 'NIN' then
-        set_macro_page(1, 1)
+        set_macro_page(1, 16)
     elseif player.sub_job == 'SAM' then
-        set_macro_page(1, 1)
+        set_macro_page(1, 16)
     elseif player.sub_job == 'THF' then
-        set_macro_page(1, 1)
+        set_macro_page(1, 16)
     else
-        set_macro_page(19, 1)
+        set_macro_page(1, 16)
     end
 end
 
@@ -296,4 +296,4 @@ function sub_job_change(new,old)
 send_command('wait 2;input /lockstyleset 16')
 end
 
-send_command('wait 2;input /lockstyleset 16')
+send_command('wait 5;input /lockstyleset 20')
