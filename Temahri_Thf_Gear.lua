@@ -12,6 +12,10 @@ function user_setup()
 	state.Weapons:options('Aeneas','MagicWeapons','LowBuff','TH','ProcClub','ProcStaff')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWEarrings','DWMax'}
 	state.AmbushMode = M(false, 'Ambush Mode')
+	
+	
+	autows = 'Exenterator'
+	autowstp = 1250
 
       -- Additional local binds --
     send_command('bind ^` input /ja "Flee" <me>')
@@ -34,6 +38,8 @@ function user_setup()
 	sets.weapons.ProcStaff = {main="Ram Staff",sub=empty}
 
     select_default_macro_book(1, 7)
+	
+	send_command('exec init.txt')
 end
 
 -- Define sets and vars used by this job file.
@@ -79,8 +85,6 @@ function init_gear_sets()
     --------------------------------------
 
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {
-		main="Sandung",
-		sub="Thief's Knife",
 		hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
 		feet="Skulk. Poulaines +1",
 		waist="Chaac Belt",})
@@ -132,7 +136,8 @@ function init_gear_sets()
 		neck="Unmoving Collar +1",
 		ear1="Enchntr. Earring +1",
 		ear2="Handler's Earring +1",
-        body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,
+        body=gear.herculean_waltz_body,
+		hands=gear.herculean_waltz_hands,
 		ring1="Defending Ring",
 		ring2="Valseur's Ring",
         back="Moonlight Cape",
@@ -167,21 +172,38 @@ function init_gear_sets()
     ----------------
 
     -- Normal melee group
-    sets.engaged = {
-		ammo="Yamarang",
-		head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
-		body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
-		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}, --gleti
+    -- sets.engaged = {
+		-- ammo="Yamarang",
+		-- head={ name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}},
+		-- body={ name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}},
+		-- hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}, --gleti
+		-- legs="Gleti's Breeches",
+		-- feet={ name="Herculean Boots", augments={'Attack+10','"Triple Atk."+4','STR+9',}},
+		-- neck="Anu Torque", --THF Neck +2
+		-- waist="Reiki Yotai",
+		-- left_ear="Telos Earring",
+		-- right_ear="Sherida Earring",
+		-- left_ring="Gere Ring",
+		-- right_ring="Hetairoi Ring",
+		-- back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
+-- }
+	
+	sets.engaged = {
+		ammo="Staunch Tathlum +1",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands={ name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}},
 		legs="Gleti's Breeches",
-		feet={ name="Herculean Boots", augments={'Attack+10','"Triple Atk."+4','STR+9',}},
-		neck="Anu Torque", --THF Neck +2
+		feet="Malignance Boots",
+		neck="Anu Torque",
 		waist="Reiki Yotai",
 		left_ear="Telos Earring",
 		right_ear="Sherida Earring",
 		left_ring="Gere Ring",
-		right_ring="Hetairoi Ring",
+		right_ring="Chirich Ring +1",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
 }
+	
 	
     sets.engaged.SomeAcc = {}
     sets.engaged.Acc = {}
@@ -241,7 +263,7 @@ sets.engaged.DTLite = {
 		waist="Fotia Belt",
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Odr Earring",
-		left_ring="Ilabrat Ring", --Regal Ring
+		left_ring="Regal Ring", --Regal Ring
 		right_ring="Epaminondas's Ring",
 		back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}},
 }
@@ -366,7 +388,10 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 2;input /lockstyleset 16')
+send_command('wait 5;input /lockstyleset 16')
 end
 
-send_command('wait 2;input /lockstyleset 16')
+send_command('wait 5;input /lockstyleset 16')
+
+
+send_command('exec init.txt')
