@@ -53,7 +53,7 @@ function init_gear_sets()
 		ammo="Homiliary",
 		head="Viti. Chapeau +3",
 		body="Lethargy Sayon +3",
-		hands="Leth. Ganth. +3",   	--Malignance Gloves
+		hands="Malignance Gloves",   	--Malignance Gloves
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 		neck="Loricate Torque +1",
@@ -151,7 +151,7 @@ sets.idle.Refresh = {
 		neck="Voltsurge Torque",
 		waist="Witful Belt",
 		left_ear="Malignance Earring",
-		right_ear="Loquac. Earring",
+		right_ear="Leth. Earring +1",
 		left_ring="Kishar Ring",
 		right_ring="Prolix Ring",
 		back={ name="Sucellos's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Occ. inc. resist. to stat. ailments+10',}},
@@ -179,19 +179,19 @@ sets.idle.Refresh = {
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Seraph Blade'] =     {
-		ammo="Pemphredo Tathlum",
-		head={ name="Merlinic Hood", augments={'Mag. Acc.+24 "Mag.Atk.Bns."+24','"Drain" and "Aspir" potency +4','INT+7','Mag. Acc.+11','"Mag.Atk.Bns."+15',}},
-		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		ammo="Sroda Tathlum",
+		head="Leth. Chappel +3",
+		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Jhakri Cuffs +2",
-		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
 		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
-		left_ear="Malignance Earring",
+		waist="Eschan Stone", -- orpheus's sash aman trove
+		left_ear="Regal Earring",
 		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
-		left_ring="Freke Ring",
-		right_ring="Shiva Ring +1",
-		back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},
+		left_ring="Epaminondas's Ring",
+		right_ring="Freke Ring",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}}, --need to make a int with WSD cape
 }
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 	
@@ -209,7 +209,7 @@ sets.idle.Refresh = {
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Ishvara Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Ilabrat Ring",
+		right_ring="Ilabrat Ring", -- sroda ring
 		back={ name="Sucellos's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}},
 }
 		
@@ -218,19 +218,20 @@ sets.idle.Refresh = {
 		})
 		
 	sets.precast.WS['Sanguine Blade'] =  {
-		ammo="Pemphredo Tathlum",
+		ammo="Sroda Tathlum",
 		head="Pixie Hairpin +1",
-		body={ name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+		body={ name="Nyame Mail", augments={'Path: B',}},
 		hands="Jhakri Cuffs +2",
-		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		feet={ name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		neck="Sanctity Necklace",
-		waist="Orpheus's Sash",
+		legs="Leth. Fuseau +3",
+		feet="Leth. Houseaux +3",
+		neck="Sanctity Necklace", -- baetyl pendant from warder of love escha ruan
+		waist="Eschan Stone", -- orpheus's sash aman trove
 		left_ear="Malignance Earring",
 		right_ear="Regal Earring",
 		left_ring="Epaminondas's Ring",
-		right_ring="Archon Ring",
-		back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}},
+		right_ring="Fenrir Ring +1", -- archon ring from arch dynamis lord
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}},
+		--back={ name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','Weapon skill damage +10%',}}, need to make this cape for this ws.
 }
 	
 	-- Midcast Sets
