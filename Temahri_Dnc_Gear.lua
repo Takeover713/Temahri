@@ -86,7 +86,7 @@ function init_gear_sets()
 		ammo="", --ammo="Aurgelmir Orb +1",
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
-		hand="", --hands="Malignance Gloves",
+		hands="Malignance Gloves",
 		legs="Gleti's Breeches",
 		feet="Malignance Boots",
 		--neck="Etoile Gorget +2",
@@ -120,7 +120,7 @@ function init_gear_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Brutal Earring", --Macu. Earring +1
 		left_ring="Epaminondas's Ring",
-		--right_ring="Regal Ring",
+		right_ring="Regal Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
 }
 
@@ -140,7 +140,7 @@ function init_gear_sets()
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
 		right_ear="Brutal Earring", --Macu. Earring +1
 		left_ring="Epaminondas's Ring",
-		right_ring="Ilabrat Ring", --"Regal Ring",
+		right_ring="Regal Ring", --"Regal Ring",
 		back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}},
 })
 	
@@ -297,3 +297,5 @@ send_command('wait 2;input /lockstyleset 16')
 end
 
 send_command('wait 5;input /lockstyleset 20')
+
+send_command('exec init.txt')
