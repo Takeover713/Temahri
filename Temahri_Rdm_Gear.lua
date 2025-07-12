@@ -3,13 +3,13 @@ function user_job_setup()
     state.OffenseMode:options('Normal')
     state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
 	state.CastingMode:options('Normal', 'Resistant', 'Fodder', 'Proc')
-    state.IdleMode:options('Normal', 'Refresh', 'PDT', 'MDT', 'TPEat','DTHippo')
+    state.IdleMode:options('Normal', 'Refresh', 'PDT', 'MDT','Aminon')
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin')
+	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH')
 	
-	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat'}
+	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat',['BH']='Black Halo'}
 	autowstp = 1250
 
 		-- Additional local binds
@@ -43,6 +43,7 @@ function init_gear_sets()
 	sets.weapons.Odin = {main="Qutrub Knife",sub="Ceremonial Dagger"}
 	sets.weapons.Naegling = {main="Naegling",sub="Thibron"}	-- sub="Tauret"
 	sets.weapons.BlackHalo = {main="Maxentius", sub="Thibron"}
+	sets.weapons.BH = {main="Maxentius", sub="Genmei Shield"}
 	sets.WakeUpWeapons = {main="Prime Sword"}
 	
 	-- Idle sets
@@ -64,7 +65,12 @@ function init_gear_sets()
 		right_ring="Vocane Ring +1",
 		back="Solemnity Cape",
 }
-	
+	sets.idle.Aminon = {main="Maxentius",--sub="Sacro Bulwark",
+		range=empty,ammo="Staunch Tathlum +1",
+		head="Null Masque",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
+		--body="Bunzi's Robe",
+		hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
+		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
 	-- sets.idle = {
 		-- main="Daybreak",
 		-- sub="Genmei Shield",
@@ -131,6 +137,10 @@ sets.idle.Refresh = {
 	sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +1"}
 	
 
+	sets.precast.Step = {ammo="Hasty Pinion +1",
+		head="Malignance Chapeau",neck="Null Loop",ear1="Zennaroi Earring",ear2="Crepuscular Earring",
+		body="Malignance Tabard",hands="Malignance Gloves",ring1="Cacoethic Ring +1",ring2="Chirich Ring +1",
+		back="Null Shawl",waist="Null Belt",legs="Malignance Tights",feet="Malignance Boots"}
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {}
 		
@@ -280,8 +290,8 @@ sets.idle.Refresh = {
         -- }
 		
 	sets.midcast.Impact = { 
-		main="Maxentius",
-		sub="Ammurapi Shield",
+		--main="Maxentius",
+		--sub="Ammurapi Shield",
 		ammo="Regal Gem",
 		--range="Ullr",
 		neck="Null Loop",
@@ -310,12 +320,12 @@ sets.idle.Refresh = {
 		main="Daybreak",
 		sub="Sors Shield",
 		ammo="Regal Gem",
-		head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+		head="Vanya Hood",
 		body="Vanya Robe",
 		hands={ name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}},
-		legs={ name="Chironic Hose", augments={'Mag. Acc.+24','Haste+1','MND+14','"Mag.Atk.Bns."+11',}},
-		feet={ name="Vanya Clogs", augments={'"Cure" potency +5%','"Cure" spellcasting time -15%','"Conserve MP"+6',}},
-		neck="Colossus's Torque",
+		legs="Atrophy Tights +1",
+		feet="Vanya Clogs",
+		neck="Incanter's Torque",
 		waist="Luminary Sash",
 		left_ear="Regal Earring",
 		right_ear="Magnetic Earring",
@@ -406,6 +416,7 @@ sets.idle.Refresh = {
 	sets.midcast.Stoneskin = {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"}
 	sets.midcast.Protect = {ring2="Sheltered Ring"}
 	sets.midcast.Shell = {ring2="Sheltered Ring"}
+	sets.midcast.BoostStat = {hands="Vitiation Gloves +3"}
 	
 	sets.midcast['Temper II'] = {
 		main="Pukulatmuj +1", -- +1 it
@@ -569,10 +580,13 @@ sets.idle.Refresh = {
 
 	sets.midcast.Aspir = sets.midcast.Drain
 	
-	sets.midcast['Absorb-TP'] = {main="Bunzi's Rod",sub="Ammurapi Shield",range="Ullr",ammo=empty,
-        head="Atrophy Chapeau +3",neck="Null Loop",ear1="Malignance Earring",ear2="Leth. Earring +1",
+	sets.midcast['Absorb-TP'] = {
+	-- main="Maxentius",
+	-- sub="Ammurapi Shield",
+		ammo="Regal Gem",
+        head="Null Masque",neck="Null Loop",ear1="Malignance Earring",ear2="Leth. Earring +1",
         body="Viti. Tabard +3",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
-        back=gear.mnd_enfeebling_jse_back,waist="Null Belt",legs="Leth. Fuseau +3",feet="Leth. Houseaux +3"}
+        back="Null Shawl",waist="Null Belt",legs="Leth. Fuseau +3",feet="Leth. Houseaux +3"}
 		
 	sets.midcast['Absorb-TP'].Resistant = {main="Bunzi's Rod",sub="Ammurapi Shield",range="Ullr",ammo=empty,
         head="Atrophy Chapeau +3",neck="Null Loop",ear1="Malignance Earring",ear2="Leth. Earring +1",
