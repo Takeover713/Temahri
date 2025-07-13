@@ -353,9 +353,9 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
 		body="Vitiation Tabard +3",
-		hands="Viti. Gloves +3", --Bastok
+		hands="Atrophy Gloves +3",
 		legs="Telchine Braconi", 
-		feet="Leth. Houseaux +3", --Abys Feet
+		feet="Leth. Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Embla Sash",
 		left_ear="Andoaa Earring",
