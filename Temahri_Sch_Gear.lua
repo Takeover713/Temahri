@@ -52,6 +52,8 @@ function user_setup()
 	send_command('bind @\\\\ input /ma "Shell V" <t>')
 	send_command('bind !\\\\ input /ma "Reraise III" <me>')
 	
+	send_command('exec init.txt')
+	
     select_default_macro_book(1, 8)
 end
 
@@ -216,10 +218,10 @@ function init_gear_sets()
 	main="Sucellus",																		--5
     sub="Genmei Shield",																	--
     ammo="Incantor Stone",																	--2
-    head={ name="Merlinic Hood", augments={'"Mag.Atk.Bns."+7','"Fast Cast"+7','MND+10',}},	--15
-    body={ name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+23','"Fast Cast"+7','CHR+4',}},--7
+    head="Merlinic Hood",	--15
+    body="Merlinic Jubbah",--7
     hands="Acad. Bracers +2",																--7
-    legs={ name="Merlinic Shalwar", augments={'"Mag.Atk.Bns."+6','"Fast Cast"+7',}},		--7
+    legs="Merlinic Shalwar",		--7
     feet="Acad. Loafers +2",																--
     neck="Voltsurge Torque",																--4
     waist="Embla Sash",																		--5
@@ -227,9 +229,30 @@ function init_gear_sets()
     right_ear="Loquac. Earring",															--2
     left_ring="Prolix Ring",																--2
     right_ring="Kishar Ring",																--4
-    back={ name="Lugh's Cape", augments={'"Fast Cast"+10',}},								--10
+    back={ name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10',}},								--10
 }  																						-----------
 																						--	74%
+	-- sets.precast.FC = {
+	-- main="Musa",
+    -- sub="Giuoco grip",
+    -- ammo="Incantor Stone",
+    -- head="Peda. M.Board +3",
+    -- body="Pinga Tunic +1",
+    -- hands="Acad. Bracers +2",
+    -- legs="Pinga Pants +1",
+    -- feet="Acad. Loafers +1",
+    -- neck="Voltsurge Torque",
+    -- waist="Embla Sash",
+    -- left_ear="Malignance Earring",
+    -- right_ear="Loquac. Earring",
+    -- left_ring="Prolix Ring",
+    -- right_ring="Kishar Ring",
+    -- back={ name="Lugh's Cape", augments={'"Fast Cast"+10',}},
+	-- }
+																						
+																						
+																						
+																						
 	sets.precast.FC.Arts = {}
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {})
     sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
@@ -319,7 +342,7 @@ function init_gear_sets()
 	
 	sets.midcast.Cursna = {
     main={ name="Gada", augments={'Enh. Mag. eff. dur. +5','MND+4','Mag. Acc.+15','DMG:+1',}},
-    head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
+    head="Vanya Hood",
 	body={ name="Peda. Gown +1", augments={'Enhances "Enlightenment" effect',}}, --Dynamis clear req +3
 	hands="Hieros Mittens",
 	legs="Acad. Pants +2", --Omen
@@ -340,7 +363,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
-		hands="Arbatel Bracers +1",
+		hands="Arbatel Bracers +2",
 		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +7',}},
 		feet="Telchine Pigaches",
 		neck="Incanter's Torque",
@@ -426,7 +449,7 @@ function init_gear_sets()
 		head="",
 		body={ name="Cohort Cloak +1", augments={'Path: A',}},
 		hands="Kaykaus Cuffs +1",
-		legs="Arbatel Pants +1",
+		legs="Arbatel Pants +2",
 		feet="Acad. Loafers +2", --Omen
 })
 	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
@@ -699,12 +722,12 @@ function init_gear_sets()
 
 
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-    sets.buff['Ebullience'] = {head="Arbatel Bonnet +1"}
-    sets.buff['Rapture'] = {head="Arbatel Bonnet +1"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Immanence'] = {hands="Arbatel Bracers +1"}
-    sets.buff['Penury'] = {legs="Arbatel Pants +1"}
-    sets.buff['Parsimony'] = {legs="Arbatel Pants +1"}
+    sets.buff['Ebullience'] = {head="Arbatel Bonnet +2"}
+    sets.buff['Rapture'] = {head="Arbatel Bonnet +2"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
+    sets.buff['Immanence'] = {hands="Arbatel Bracers +2"}
+    sets.buff['Penury'] = {legs="Arbatel Pants +2"}
+    sets.buff['Parsimony'] = {legs="Arbatel Pants +2"}
     sets.buff['Celerity'] = {feet="Peda. Loafers +1"}
     sets.buff['Alacrity'] = {feet="Peda. Loafers +1"}
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
@@ -738,7 +761,9 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 2;input /lockstyleset 18')
+send_command('wait 7;input /lockstyleset 18')
 end
 
-send_command('wait 2;input /lockstyleset 18')
+send_command('wait 7;input /lockstyleset 18')
+
+send_command('exec init.txt')

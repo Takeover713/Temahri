@@ -71,43 +71,9 @@ function init_gear_sets()
 		--body="Bunzi's Robe",
 		hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
 		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
-	-- sets.idle = {
-		-- main="Daybreak",
-		-- sub="Genmei Shield",
-		-- ammo="Staunch Tathlum +1",
-		-- head="Malignance Chapeau",
-		-- body="Malignance Tabard",
-		-- hands="Vitiation Gloves +1",   	--Malignance Gloves
-		-- legs="Malignance Tights",
-		-- feet="Malignance Boots",
-		-- neck="Loricate Torque +1",
-		-- waist="Fucho-no-Obi",
-		-- left_ear="Hearty Earring",
-		-- right_ear="Etiolation Earring",
-		-- left_ring="Defending Ring",
-		-- right_ring="Vocane Ring +1",
-		-- back="Solemnity Cape",
--- }
 
-	-- sets.idle = {
-        -- main="Daybreak",
-		-- sub="Genmei Shield",
-		-- ammo="Homiliary",
-		-- head="Viti. Chapeau +3",
-		-- body="Lethargy Sayon +3",
-		-- hands=gear.Chironic_R_hands,
-		-- legs={ name="Chironic Hose", augments={'"Fast Cast"+2','INT+5','"Refresh"+1','Accuracy+20 Attack+20','Mag. Acc.+3 "Mag.Atk.Bns."+3',}},
-		-- feet={ name="Chironic Slippers", augments={'INT+5','"Repair" potency +5%','"Refresh"+1',}},
-		-- neck="Loricate Torque +1",
-		-- waist="Plat. Mog. Belt",
-		-- left_ear="Etiolation Earring",
-		-- right_ear="Ethereal Earring",
-		-- left_ring="Defending Ring",
-        -- right_ring={name="Stikini Ring +1", bag="wardrobe3"},
-		-- back=gear.RDM_MND_Cape,
-        -- }
 
-sets.idle.Refresh = {
+	sets.idle.Refresh = {
 		main="Daybreak",
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
@@ -134,7 +100,7 @@ sets.idle.Refresh = {
 	organizer_items = {}
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +1"}
+	sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +3"}
 	
 
 	sets.precast.Step = {ammo="Hasty Pinion +1",
@@ -150,11 +116,11 @@ sets.idle.Refresh = {
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {
-		main={ name="Crocea Mors", augments={'Path: C',}},
-		sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -3%','HP+30 MP+30','Magic dmg. taken -3%',}},
+		-- main={ name="Crocea Mors", augments={'Path: C',}},
+		-- sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -3%','HP+30 MP+30','Magic dmg. taken -3%',}},
 		ammo="Sapience Orb",
-		head="Atro. Chapeau +2",
-		body={ name="Viti. Tabard +1", augments={'Enhances "Chainspell" effect',}},
+		head="Atrophy Chapeau +3",
+		body="Vitiation Tabard +3",
 		hands="Leyline Gloves",
 		legs="Psycloth Lappas",
 		feet="Amalric Nails",
@@ -386,8 +352,8 @@ sets.idle.Refresh = {
 		sub="Ammurapi Shield",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +1",
-		hands="Viti. Gloves +1", --Bastok
+		body="Vitiation Tabard +3",
+		hands="Viti. Gloves +3", --Bastok
 		legs="Telchine Braconi", 
 		feet="Leth. Houseaux +3", --Abys Feet
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
@@ -410,7 +376,7 @@ sets.idle.Refresh = {
 	--Red Mage enhancing sets are handled in a different way from most, layered on due to the way Composure works//
 	--Don't set combine a full set with these spells, they should layer on Enhancing Set > Composure (If Applicable) > Spell
 	
-	sets.midcast.Refresh = {body="Atrophy Tabard +2",legs="Leth. Fuseau +3"}
+	sets.midcast.Refresh = {body="Atrophy Tabard +3",legs="Leth. Fuseau +3"}
 	sets.midcast.Aquaveil = {hands="Regal Cuffs",waist="Emphatikos Rope",legs="Shedir Seraweels"}
 	sets.midcast.BarElement = {legs="Shedir Seraweels"}
 	sets.midcast.Stoneskin = {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"}
@@ -423,8 +389,8 @@ sets.idle.Refresh = {
 		sub="Pukulatmuj",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +1",
-		hands="Viti. Gloves +1", --bastok
+		body="Vitiation Tabard +3",
+		hands="Viti. Gloves +3", --bastok
 		legs="Telchine Braconi", 
 		feet="Leth. Houseaux +3", --Abys Feet
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
@@ -441,8 +407,8 @@ sets.idle.Refresh = {
 		sub="Pukulatmuj",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +1",
-		hands="Viti. Gloves +1", --bastok
+		body="Vitiation Tabard +3",
+		hands="Viti. Gloves +3", --bastok
 		--legs="Telchine Braconi",
 		legs="Carmine Cuisses +1",
 		feet="Leth. Houseaux +3", --Abys Feet
@@ -570,7 +536,7 @@ sets.idle.Refresh = {
 
 	sets.midcast['Dark Magic'] = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
 		head="Amalric Coif +1",neck="Incanter's Torque",ear1="Regal Earring",ear2="Digni. Earring",
-		body="Atrophy Tabard +2",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
+		body="Atrophy Tabard +3",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Sucellos's Cape",waist="Luminary Sash",legs="Psycloth Lappas",feet=gear.merlinic_nuke_feet}
 
     sets.midcast.Drain = {main="Rubicundity",sub="Ammurapi Shield",ammo="Regal Gem",
