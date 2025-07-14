@@ -52,7 +52,7 @@ function init_gear_sets()
 		main="Daybreak",
 		sub="Genmei Shield",
 		ammo="Homiliary",
-		head="Viti. Chapeau +3",
+		head="Viti. Chapeau +4",
 		body="Lethargy Sayon +3",
 		hands="Malignance Gloves",   	--Malignance Gloves
 		legs="Malignance Tights",
@@ -65,13 +65,26 @@ function init_gear_sets()
 		right_ring="Vocane Ring +1",
 		back="Solemnity Cape",
 }
-	sets.idle.Aminon = {main="Maxentius",--sub="Sacro Bulwark",
-		range=empty,ammo="Staunch Tathlum +1",
-		head="Null Masque",neck="Warder's Charm +1",ear1="Etiolation Earring",ear2="Sanare Earring",
-		--body="Bunzi's Robe",
-		hands="Bunzi's Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-		back="Null Shawl",waist="Null Belt",legs="Bunzi's Pants",feet="Bunzi's Sabots"}
-
+	sets.idle.Aminon = {
+		main="Maxentius",
+		sub="Genmei Shield",
+		-- sub="Sacro Bulwark",
+		ammo="Staunch Tathlum +1",
+		head="Null Masque",
+		body="Lethargy Sayon +3",
+		-- body="Bunzi's Robe",
+		hands="Bunzi's Gloves",
+		legs="Bunzi's Pants",
+		feet="Bunzi's Sabots",
+		neck="Warder's Charm +1",
+		waist="Null Belt",
+		left_ear="Hearty Earring",
+		right_ear="Etiolation Earring",
+		-- ear2="Sanare Earring",
+		left_ring="Defending Ring",
+		right_ring="Shadow Ring",
+		back="Null Shawl",
+	}
 
 	sets.idle.Refresh = {
 		main="Daybreak",
@@ -139,7 +152,7 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
 		ammo="Coiste Bodhar",
-		head="Nyame Helm",
+		head="Viti. Chapeau +4",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -175,7 +188,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Savage Blade'] = {    
 		ammo="Coiste Bodhar",
-		head="Nyame Helm",
+		head="Viti. Chapeau +4",
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		legs="Nyame Flanchard",
@@ -481,11 +494,11 @@ function init_gear_sets()
 	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast.Diaga = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast['Dia II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-	sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Viti. Chapeau +3",waist="Chaac Belt"})
+	sets.midcast['Dia III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Viti. Chapeau +4",waist="Chaac Belt"})
 	
 	sets.midcast.Bio = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast['Bio II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-	sets.midcast['Bio III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Viti. Chapeau +3",waist="Chaac Belt",feet=gear.chironic_treasure_feet})
+	sets.midcast['Bio III'] = set_combine(sets.midcast['Enfeebling Magic'], {head="Viti. Chapeau +4",waist="Chaac Belt",feet=gear.chironic_treasure_feet})
 
 	sets.midcast['Slow II'] = set_combine(sets.midcast['Enfeebling Magic'], {})
 	sets.midcast['Slow II'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
@@ -583,7 +596,7 @@ function init_gear_sets()
 	
 	-- Resting sets
 	sets.resting = {main="Bolelabunga",sub="Genmei Shield",ammo="Impatiens",
-		head="Viti. Chapeau +3",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
+		head="Viti. Chapeau +4",neck="Loricate Torque +1",ear1="Etiolation Earring",ear2="Ethereal Earring",
 		body="Jhakri Robe +2",hands=gear.merlinic_refresh_hands,ring1="Defending Ring",ring2="Sheltered Ring",
 		back="Umbra Cape",waist="Flume Belt",legs="Lengo Pants",feet=gear.chironic_refresh_feet}
 
