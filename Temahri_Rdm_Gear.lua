@@ -280,9 +280,9 @@ function init_gear_sets()
 		--main="Maxentius",
 		--sub="Ammurapi Shield",
 		ammo="Regal Gem",
-		--ammo="Aurgelmir Orb",
+		ammo="Aurgelmir Orb",
 		--range="Ullr",
-		neck="Null Loop",
+		neck="Bathy choker",
 		-- ear1="Malignance Earring",
 		-- ear2="Snotra Earring",
 		left_ear="Sherida Earring",
@@ -561,7 +561,7 @@ function init_gear_sets()
 	-- sub="Ammurapi Shield",
 		ammo="Regal Gem",
         head="Null Masque",neck="Null Loop",ear1="Malignance Earring",ear2="Leth. Earring +1",
-        body="Viti. Tabard +3",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
+        body="Lethargy Sayon +3",hands="Leth. Ganth. +3",ring1="Stikini Ring +1",ring2="Metamor. Ring +1",
         back="Null Shawl",waist="Null Belt",legs="Leth. Fuseau +3",feet="Leth. Houseaux +3"}
 		
 	sets.midcast['Absorb-TP'].Resistant = {ammo="Regal Gem",
