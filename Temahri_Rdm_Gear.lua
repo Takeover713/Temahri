@@ -7,7 +7,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH')
+	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH','Sword')
 	
 	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat',['BH']='Black Halo'}
 	autowstp = 1250
@@ -41,7 +41,8 @@ function init_gear_sets()
 	-- Weapons sets
 	sets.weapons.Sequence = {main="Sequence",sub="Thibron"}
 	sets.weapons.Odin = {main="Qutrub Knife",sub="Ceremonial Dagger"}
-	sets.weapons.Naegling = {main="Naegling",sub="Thibron"}	-- sub="Tauret"
+	sets.weapons.Naegling = {main="Naegling",sub="Thibron"}
+	sets.weapons.Sword = {main="Naegling",sub="Genmei Shield"}
 	sets.weapons.BlackHalo = {main="Maxentius", sub="Thibron"}
 	sets.weapons.BH = {main="Maxentius",sub="Ammurapi Shield"}
 	sets.WakeUpWeapons = {main="Prime Sword"}
