@@ -376,13 +376,14 @@ function init_gear_sets()
 }
 
     sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {
-		main={ name="Gada", augments={'Enh. Mag. eff. dur. +5','Mag. Acc.+4','"Mag.Atk.Bns."+18',}},
+	    main={ name="Gada", augments={'Enh. Mag. eff. dur. +5','Mag. Acc.+4','"Mag.Atk.Bns."+18',}},
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
-		hands="Arbatel Bracers +1",
-		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +7',}},
-		feet="Telchine Pigaches",
+		head="Arbatel Bonnet +2",
+		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}},
+		hands="Arbatel Bracers +2",
+		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +8',}},
+		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8',}},
 		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Etiolation Earring",
