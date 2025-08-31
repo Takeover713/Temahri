@@ -821,9 +821,9 @@ buff_spell_lists = {
 	}}
 	
 function sub_job_change(new,old)
-send_command('wait 5;input /lockstyleset 20')
+send_command('wait 5;input /lockstyleset 13')
 end
 
-send_command('wait 5;input /lockstyleset 20')
+send_command('wait 5;input /lockstyleset 13')
 
 send_command('exec init.txt')
