@@ -7,7 +7,7 @@ function user_setup()
     state.CastingMode:options('Normal', 'Resistant')
     state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	state.ExtraMeleeMode = M{['description']='Extra Melee Mode', 'None', 'DWMax'}
-	state.Weapons:options('LeadenMelee','Naegling','NaeglingDW','LastStand','Absorb','AeolianWeapons')
+	state.Weapons:options('Leaden','Naegling','NaeglingDW','LastStand','Absorb','AeolianWeapons','Trials')
 	state.CompensatorMode:options('Always','300','1000','Never')
 	
 	--	AF Body Relic Body,Hands,Feet --Empy Head,Hands,Legs(acc),Feet
@@ -16,7 +16,7 @@ function user_setup()
 	--  Atakos https://www.bg-wiki.com/ffxi/Category:Trial_of_the_Magians_Marksmanship
 	
 	
-    gear.RAbullet = "Chrono Bullet" -- Chrono Bullet
+    gear.RAbullet = "Chrono Bullet" -- Bronze Bullet
     gear.WSbullet = "Chrono Bullet"
     gear.MAbullet = "Living Bullet" --For MAB WS, do not put single-use bullets here. Orichalc. Bullet
     gear.QDbullet = "Living Bullet"
@@ -24,7 +24,7 @@ function user_setup()
 
 	send_command('exec init.txt')
 	
-	autows_list = {['LeadenMelee']='Leaden Salute',['Naegling']='Savage Blade',['NaeglingDW']='Savage Blade',['LastStand']='Last Stand',['AeolianWeapons']='Aeolian Edge'}
+	autows_list = {['Leaden']='Leaden Salute',['Naegling']='Savage Blade',['NaeglingDW']='Savage Blade',['LastStand']='Last Stand',['AeolianWeapons']='Aeolian Edge'}
 	autowstp = 1250
 
     -- Additional local binds
@@ -37,17 +37,36 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+
+----To Upgrade----
+----------------------------------------------------------
+--AF -Laksamana's 
+
+--Frac +2	P. COR Card x15	Kyou's Scale	Niobium Ingot, Cypress Lumber,Cyan Orb x3
+-----------------------------------------------------------
+--Relic -Lanun
+
+--Body +2	Torsoshard: COR x2	Voidtorso: COR x2	Hades' Claw x2	Lanun Frac +3
+
+--Feet +1	Footshard: COR x2	Azure Leaf	Rockfin Tooth x1		Lanun Bottes +2
+--Bottes +2	Footshard: COR x2	Voidfoot: COR x2	Plovid Flesh x2	Lanun Bottes +3
+-----------------------------------------------------------
+--Empy
+
+--ALL
+
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
 	
 	-- Weapons sets
-	sets.weapons.LeadenMelee = {main="Naegling",sub='Nusku Shield',range="Fomalhaut"}
+	sets.weapons.Leaden = {main="Naegling",sub="Nusku Shield",range="Death Penalty"}
 	sets.weapons.Naegling = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
 	sets.weapons.NaeglingDW = {main="Naegling",sub="Gleti's Knife",range="Ataktos"}
 	sets.weapons.Absorb = {main="Naegling",sub="Nusku Shield",range=empty}
 	sets.weapons.AeolianWeapons = {main="Blurred Knife +1",sub="Hep. Rapier +1",range="Ataktos"}
 	sets.weapons.LastStand = {main={ name="Rostam", augments={'Path: A',}},sub="Nusku Shield",range="Fomalhaut"}
+	sets.weapons.Trials = {main="Seika Uchiwa",sub="Nusku Shield",range="Anarchy"}
 
     -- Sets to return to when not performing an action.
 	
@@ -103,7 +122,7 @@ function init_gear_sets()
 		legs="Chasseur's Culottes +1", 
 		feet="Malignance Boots",
 		--neck="Combatant's Torque",
-		neck="",
+		neck="Iskur Gorget",
 		waist="Reiki Yotai",
 		left_ear="Telos Earring",
 		right_ear="Suppanomimi",
@@ -139,7 +158,7 @@ function init_gear_sets()
     sets.midcast.RA.Acc = {}
 		
 	sets.buff['Triple Shot'] = {
-		body="Chasseur's Frac +1", --Empy, sortie
+		body="Chasseur's Frac +2", --Empy, sortie
 		hands="Lanun Gants +1", --Relic, bastok (done)
 		head="Oshosi Mask +1", --AH
 		legs="Osh. Trousers +1", --AH
@@ -151,7 +170,7 @@ function init_gear_sets()
 	
 	sets.precast.RA = {
 		ammo=gear.RAbullet,
-        head="Chass. Tricorne +1", 
+        head="Chass. Tricorne +2", 
 		--neck="Commodore Charm +2", --AH
         body="Laksa. Frac +2", --AF, Omen
 		hands="Lanun Gants +1", --Bastok (Done)
@@ -164,7 +183,7 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +1"}
+	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"}
     sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
     sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"}
     sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"}
@@ -175,7 +194,7 @@ function init_gear_sets()
 		range="Compensator",
 		head="Lanun Tricorne +1", --Dynamis, Windy
 		neck="Regal Necklace",
-		hands="Chasseur's Gants +1", --Empy, Sortie
+		hands="Chasseur's Gants +2", --Empy, Sortie
 		back={ name="Camulus's Mantle", augments={'INT+20','"Snapshot"+10',}},
 		feet="Malignance Boots",
 }
@@ -184,9 +203,9 @@ function init_gear_sets()
 	sets.precast.CorsairRoll["Bolter's Roll"] = {neck="Regal Necklace",}
     sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +1"})
     sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +1"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +1"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +1"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +1"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
     
     sets.precast.CorsairShot = {
 		ammo=gear.QDbullet,
@@ -265,7 +284,7 @@ function init_gear_sets()
 		ammo=gear.WSbullet,
 		head={ name="Nyame Helm", augments={'Path: B',}},
 		body={ name="Nyame Mail", augments={'Path: B',}},
-		hands="Chasseur's Gants +1",
+		hands="Chasseur's Gants +2",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
 		neck="Rep. Plat. Medal",
@@ -339,8 +358,8 @@ function init_gear_sets()
 	sets.midcast['Absorb-TP'] = {
 		ammo="Pemphredo Tathlum",
 		head="Null Masque",
-		body="Chasseur's Frac +1",
-		hands="Chasseur's Gants +1",
+		body="Chasseur's Frac +2",
+		hands="Chasseur's Gants +2",
 		legs="Chas. Culottes +1",
 		feet="Chass. Bottes +1",
 		neck="Null Loop",
