@@ -7,9 +7,9 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH','Sword')
+	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH','Sword','Gleti')
 	
-	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat',['BH']='Black Halo'}
+	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat',['BH']='Black Halo',['Gleti']='Evisceration'}
 	autowstp = 1250
 
 		-- Additional local binds
@@ -45,6 +45,7 @@ function init_gear_sets()
 	sets.weapons.Sword = {main="Naegling",sub="Genmei Shield"}
 	sets.weapons.BlackHalo = {main="Maxentius", sub="Thibron"}
 	sets.weapons.BH = {main="Maxentius",sub="Ammurapi Shield"}
+	sets.weapons.Gleti = {main="Gleti's Knife",sub="Thibron"}
 	sets.WakeUpWeapons = {main="Prime Sword"}
 	
 	-- Idle sets
@@ -696,10 +697,10 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 6;input /lockstyleset 20')
+send_command('wait 6;input /lockstyleset 13')
 end
 
-send_command('wait 6;input /lockstyleset 20')
+send_command('wait 6;input /lockstyleset 13')
 
 send_command('exec init.txt')
 
