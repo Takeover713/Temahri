@@ -1,7 +1,5 @@
 function user_setup()
 
-		--Erilaz = body > feet > legs > head > hands
-
 	state.OffenseMode:options('Normal','SomeAcc','Acc')
 	state.HybridMode:options('Tank','Normal','DTLite')
 	state.WeaponskillMode:options('Normal','SomeAcc','Acc')
@@ -359,7 +357,7 @@ function init_gear_sets()
 		back="Evasionist's Cape", --Ogma's cape (INT, MAB, etc)
 }
 
-    sets.precast.JA['Vallation'] = set_combine(sets.Enmity,{body="Runeist Coat +3",legs="Futhark Trousers +1",back={ name="Ogma's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10',}},})
+    sets.precast.JA['Vallation'] = set_combine(sets.Enmity,{body="Runeist Coat +4",legs="Futhark Trousers +1",back={ name="Ogma's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10',}},})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.Enmity,{feet="Runeist's Boots +3"})
     sets.precast.JA['Battuta'] = set_combine(sets.Enmity,{head="Futhark Bandeau +3"})
