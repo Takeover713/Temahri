@@ -115,7 +115,7 @@ function init_gear_sets()
 	organizer_items = {}
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +3"}
+	sets.precast.JA['Chainspell'] = {body="Vitiation Tabard +4"}
 	
 
 	sets.precast.Step = {ammo="Hasty Pinion +1",
@@ -135,7 +135,7 @@ function init_gear_sets()
 		-- sub={ name="Beatific Shield +1", augments={'Phys. dmg. taken -3%','HP+30 MP+30','Magic dmg. taken -3%',}},
 		ammo="Sapience Orb",
 		head="Atrophy Chapeau +3",
-		body="Vitiation Tabard +3",
+		body="Vitiation Tabard +4",
 		hands="Leyline Gloves",
 		legs="Psycloth Lappas",
 		feet="Amalric Nails",
@@ -381,7 +381,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +3",
+		body="Vitiation Tabard +4",
 		hands="Atrophy Gloves +4",
 		legs="Telchine Braconi", 
 		feet="Leth. Houseaux +3",
@@ -414,14 +414,14 @@ function init_gear_sets()
 	sets.midcast.BoostStat = {hands="Vitiation Gloves +3"}
 	
 	sets.midcast['Temper II'] = {
-		main="Pukulatmuj +1", -- +1 it
+		main="Pukulatmuj +1",
 		sub="Ammurapi Shield",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +3",
-		hands="Viti. Gloves +3", --bastok
+		body="Vitiation Tabard +4",
+		hands="Viti. Gloves +3",
 		legs="Telchine Braconi", 
-		feet="Leth. Houseaux +3", --Abys Feet
+		feet="Leth. Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Embla Sash",
 		left_ear="Andoaa Earring",
@@ -432,15 +432,15 @@ function init_gear_sets()
 }
 
     sets.midcast.Enspell = {
-		main="Pukulatmuj +1", -- +1 it
+		main="Pukulatmuj +1",
 		sub="Pukulatmuj",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Vitiation Tabard +3",
-		hands="Viti. Gloves +3", --bastok
+		body="Vitiation Tabard +4",
+		hands="Viti. Gloves +3",
 		--legs="Telchine Braconi",
 		legs="Carmine Cuisses +1",
-		feet="Leth. Houseaux +3", --Abys Feet
+		feet="Leth. Houseaux +3", 
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
 		waist="Embla Sash",
 		left_ear="Andoaa Earring",
@@ -697,10 +697,10 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 6;input /lockstyleset 13')
+send_command('wait 6;input /lockstyleset 17')
 end
 
-send_command('wait 6;input /lockstyleset 13')
+send_command('wait 6;input /lockstyleset 17')
 
 send_command('exec init.txt')
 
