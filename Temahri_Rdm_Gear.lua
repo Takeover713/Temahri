@@ -7,7 +7,7 @@ function user_job_setup()
     state.PhysicalDefenseMode:options('PDT', 'NukeLock')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','Naegling','BlackHalo','Sequence','Odin','BH','Sword','Gleti')
+	state.Weapons:options('None','BH','Naegling','Gleti','Sword')
 	
 	autows_list = {['Naegling']='Savage Blade',['BlackHalo']='Black Halo',['Sequence']='Requiescat',['BH']='Black Halo',['Gleti']='Evisceration'}
 	autowstp = 1250
@@ -242,41 +242,41 @@ function init_gear_sets()
 	
 	-- Gear for Magic Burst mode.
     sets.MagicBurst = {
-    main="Bunzi's Rod",
-    sub="Ammurapi Shield",
-    ammo="Ghastly Tathlum +1",
-    head="Leth. Chappel +3",
-    body="Lethargy Sayon +3",
-    hands="Leth. Ganth. +3",
-    legs="Leth. Fuseau +3",
-    feet="Leth. houseaux +3",
-    neck="Sibyl Scarf",
-    waist="Acuity Belt +1",
-    left_ear="Regal Earring",
-    right_ear="Malignance Earring",
-    left_ring="Freke Ring",
-    right_ring="Mujin Band",
-	back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}},
-    --back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
-	}
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+		ammo="Ghastly Tathlum +1",
+		head="Ea Hat +1",
+		body="Lethargy Sayon +3",
+		hands="Bunzi's Gloves",
+		legs="Leth. Fuseau +3",
+		feet="Viti. Boots +4",
+		neck="Mizu. Kubikazari",
+		waist="Acuity Belt +1",
+		left_ear="Regal Earring",
+		right_ear="Malignance Earring",
+		left_ring="Freke Ring",
+		right_ring="Mujin Band",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}},
+		--back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}},
+}
 	
-	-- sets.midcast['Elemental Magic'] = {
-        -- main="Bunzi's Rod",
-		-- sub="Ammurapi Shield",
-        -- ammo="Ghastly Tathlum +1",
-        -- head="Leth. Chappel +2",
-        -- body="Lethargy Sayon +3",
-        -- hands="Leth. Ganth. +3",
-        -- legs="Leth. Fuseau +3",
-        -- feet="Leth. houseaux +3",
-        -- neck="Sibyl Scarf",
-        -- ear1="Malignance Earring",
-        -- ear2="Regal Earring",
-		-- ring1="Metamor. Ring +1",
-        -- ring2="Medada's Ring",
-        -- back=gear.RDM_INT_Cape,
-        -- waist="Acuity Belt +1",
-        -- }
+	sets.midcast['Elemental Magic'] = {
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
+        ammo="Ghastly Tathlum +1",
+        head="Leth. Chappel +2",
+        body="Lethargy Sayon +3",
+        hands="Leth. Ganth. +3",
+        legs="Leth. Fuseau +3",
+        feet="Leth. houseaux +3",
+		neck="Sibyl Scarf",
+		waist="Acuity Belt +1",
+		left_ear="Regal Earring",
+		right_ear="Malignance Earring",
+		left_ring="Freke Ring",
+		right_ring="Mujin Band",
+		back={ name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10',}},
+}
 		
 	sets.midcast.Impact = { 
 		--main="Maxentius",
@@ -411,7 +411,7 @@ function init_gear_sets()
 	sets.midcast.Stoneskin = {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"}
 	sets.midcast.Protect = {ring2="Sheltered Ring"}
 	sets.midcast.Shell = {ring2="Sheltered Ring"}
-	sets.midcast.BoostStat = {hands="Vitiation Gloves +3"}
+	sets.midcast.BoostStat = {hands="Viti. Gloves +4"}
 	
 	sets.midcast['Temper II'] = {
 		main="Pukulatmuj +1",
@@ -419,7 +419,7 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
 		body="Vitiation Tabard +4",
-		hands="Viti. Gloves +3",
+		hands="Viti. Gloves +4",
 		legs="Telchine Braconi", 
 		feet="Leth. Houseaux +3",
 		neck={ name="Dls. Torque +2", augments={'Path: A',}},
@@ -437,7 +437,7 @@ function init_gear_sets()
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
 		body="Vitiation Tabard +4",
-		hands="Viti. Gloves +3",
+		hands="Viti. Gloves +4",
 		--legs="Telchine Braconi",
 		legs="Carmine Cuisses +1",
 		feet="Leth. Houseaux +3", 

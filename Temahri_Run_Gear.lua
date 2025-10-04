@@ -360,7 +360,7 @@ function init_gear_sets()
     sets.precast.JA['Vallation'] = set_combine(sets.Enmity,{body="Runeist Coat +4",legs="Futhark Trousers +1",back={ name="Ogma's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10',}},})
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = set_combine(sets.Enmity,{feet="Runeist's Boots +3"})
-    sets.precast.JA['Battuta'] = set_combine(sets.Enmity,{head="Futhark Bandeau +3"})
+    sets.precast.JA['Battuta'] = set_combine(sets.Enmity,{head="Futhark Bandeau +4"})
     sets.precast.JA['Liement'] = set_combine(sets.Enmity,{body="Futhark Coat +1"})
 	sets.precast.JA['Gambit'] = set_combine(sets.Enmity,{hands="Runeist's Mitons +1"})
     sets.precast.JA['Rayke'] = set_combine(sets.Enmity,{feet="Futhark Boots +1"})
@@ -379,7 +379,7 @@ function init_gear_sets()
     sets.precast.JA['Vallation'].DT = set_combine(sets.Enmity.DT,{body="Runeist's Coat +3", legs="Futhark Trousers +1"})
     sets.precast.JA['Valiance'].DT = sets.precast.JA['Vallation'].DT
     sets.precast.JA['Pflug'].DT = set_combine(sets.Enmity.DT,{feet="Runeist's Boots +3"})
-    sets.precast.JA['Battuta'].DT = set_combine(sets.Enmity.DT,{head="Futhark Bandeau +1"})
+    sets.precast.JA['Battuta'].DT = set_combine(sets.Enmity.DT,{head="Futhark Bandeau +4"})
     sets.precast.JA['Liement'].DT = set_combine(sets.Enmity.DT,{body="Futhark Coat +1"})
     sets.precast.JA['Gambit'].DT = set_combine(sets.Enmity.DT,{hands="Runeist's Mitons +3"})
     sets.precast.JA['Rayke'].DT = set_combine(sets.Enmity.DT,{feet="Futhark Boots +1"})
@@ -411,7 +411,7 @@ function init_gear_sets()
 	
     sets.precast.FC = {
 		ammo="Sapience Orb",
-		head="Runeist Bandeau +3",
+		head="Runeist Bandeau +4",
 		body="Erilaz Surcoat +3",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
@@ -427,7 +427,7 @@ function init_gear_sets()
 			
 	sets.precast.FC.DT = {
 		ammo="Sapience Orb",
-		head="Runeist Bandeau +3",
+		head="Runeist Bandeau +4",
 		body="Erilaz Surcoat +3",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
@@ -457,7 +457,7 @@ function init_gear_sets()
 	
     sets.midcast.FastRecast = {
 		ammo="Sapience Orb",
-		head="Runeist Bandeau +3",
+		head="Runeist Bandeau +4",
 		body="Erilaz Surcoat +3",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
@@ -473,7 +473,7 @@ function init_gear_sets()
 			
 	sets.midcast.FastRecast.DT = {
 		ammo="Sapience Orb",
-		head="Runeist Bandeau +3",
+		head="Runeist Bandeau +4",
 		body="Erilaz Surcoat +3",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		legs={ name="Futhark Trousers +1", augments={'Enhances "Inspire" effect',}},
@@ -495,7 +495,7 @@ function init_gear_sets()
 })
     
 	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],{
-		head="Fu. Bandeau +3",
+		head="Futhark Bandeau +4",
 		hands="Regal Gauntlets",})
     
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
@@ -512,7 +512,7 @@ function init_gear_sets()
 		left_ear="Cryptic Earring",
 }
 		
-	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Runeist Bandeau +3"}) 
+	sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Runeist Bandeau +4"}) 
 	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +3"}) 	
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Foil = set_combine(sets.Enmity, {})
