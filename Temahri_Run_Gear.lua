@@ -362,7 +362,7 @@ function init_gear_sets()
     sets.precast.JA['Pflug'] = set_combine(sets.Enmity,{feet="Runeist's Boots +3"})
     sets.precast.JA['Battuta'] = set_combine(sets.Enmity,{head="Futhark Bandeau +4"})
     sets.precast.JA['Liement'] = set_combine(sets.Enmity,{body="Futhark Coat +1"})
-	sets.precast.JA['Gambit'] = set_combine(sets.Enmity,{hands="Runeist's Mitons +1"})
+	sets.precast.JA['Gambit'] = set_combine(sets.Enmity,{hands="Runeist Mitons +4"})
     sets.precast.JA['Rayke'] = set_combine(sets.Enmity,{feet="Futhark Boots +1"})
     sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity,{body="Futhark Coat +1"})
     sets.precast.JA['Swordplay'] = set_combine(sets.Enmity,{hands="Futhark Mitons +1"})
@@ -381,7 +381,7 @@ function init_gear_sets()
     sets.precast.JA['Pflug'].DT = set_combine(sets.Enmity.DT,{feet="Runeist's Boots +3"})
     sets.precast.JA['Battuta'].DT = set_combine(sets.Enmity.DT,{head="Futhark Bandeau +4"})
     sets.precast.JA['Liement'].DT = set_combine(sets.Enmity.DT,{body="Futhark Coat +1"})
-    sets.precast.JA['Gambit'].DT = set_combine(sets.Enmity.DT,{hands="Runeist's Mitons +3"})
+    sets.precast.JA['Gambit'].DT = set_combine(sets.Enmity.DT,{hands="Rune. Mitons +4"})
     sets.precast.JA['Rayke'].DT = set_combine(sets.Enmity.DT,{feet="Futhark Boots +1"})
     sets.precast.JA['Elemental Sforzo'].DT = set_combine(sets.Enmity.DT,{body="Futhark Coat +1"})
     sets.precast.JA['Swordplay'].DT = set_combine(sets.Enmity.DT,{hands="Futhark Mitons +1"})
@@ -548,10 +548,10 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 2;input /lockstyleset 17')
+send_command('wait 5;input /lockstyleset 13')
 end
 
-send_command('wait 2;input /lockstyleset 17')
+send_command('wait 5;input /lockstyleset 13')
 
 buff_spell_lists = {
 	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
