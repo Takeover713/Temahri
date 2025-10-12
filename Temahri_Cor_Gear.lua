@@ -61,8 +61,8 @@ function init_gear_sets()
 	
 	-- Weapons sets
 	sets.weapons.Leaden = {main="Naegling",sub="Nusku Shield",range="Death Penalty"}
-	sets.weapons.Naegling = {main="Naegling",sub="Nusku Shield",range="Ataktos"}
-	sets.weapons.NaeglingDW = {main="Naegling",sub="Gleti's Knife",range="Ataktos"}
+	sets.weapons.Naegling = {main="Naegling",sub="Nusku Shield",range="Fomalhaut"} --range="Ataktos"}
+	sets.weapons.NaeglingDW = {main="Naegling",sub="Gleti's Knife",range="Fomalhaut"} --range="Ataktos"}
 	sets.weapons.Absorb = {main="Naegling",sub="Nusku Shield",range=empty}
 	sets.weapons.AeolianWeapons = {main="Blurred Knife +1",sub="Hep. Rapier +1",range="Ataktos"}
 	sets.weapons.LastStand = {main={ name="Rostam", augments={'Path: A',}},sub="Nusku Shield",range="Fomalhaut"}
@@ -89,9 +89,9 @@ function init_gear_sets()
 		feet="Malignance Boots",
 		neck="Loricate Torque +1",
 		waist="Null Belt",
-		left_ear="Tuisto Earring",
+		left_ear="Genmei Earring",
 		right_ear="Odnowa Earring +1",
-		left_ring="Defending Ring",
+		left_ring="Murky Ring",
 		right_ring="Vocane Ring +1",
 		back="Moonbeam Cape",
 }
@@ -290,7 +290,7 @@ function init_gear_sets()
 
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
 	sets.precast.WS['Aeolian Edge'] = {}
-	sets.precast.WS['Circle Blade'] = {}
+	sets.precast.WS['Circle Blade'] = set_combine(sets.precast.WS['Savage Blade'], {})
 	
 	
 	--Ephramad's Ring instead of regal ring, crepuscular knife, nyame helm r15, nyame legs r15, 

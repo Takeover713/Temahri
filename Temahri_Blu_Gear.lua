@@ -46,7 +46,7 @@ function init_gear_sets()
 	---------------
 	
 	sets.idle = {
-		ammo="Aurgelmir Orb +1",
+		ammo="Staunch Tathlum +1",
 		head="Aya. Zucchetto +2",
 		body="Jhakri Robe +2",
 		hands="Aya. Manopolas +2",
@@ -62,6 +62,7 @@ function init_gear_sets()
 }
 
 	sets.idle.PDT = {
+		ammo="Staunch Tathlum +1",
 		head="Aya. Zucchetto +2",
 		body="Ayanmo Corazza +1",
 		hands="Aya. Manopolas +2",
@@ -78,7 +79,7 @@ function init_gear_sets()
 
 	-- Defense sets
 	sets.defense.PDT = {
-		ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum +1",
 		head="Aya. Zucchetto +2",
 		body="Ayanmo Corazza +1",
 		hands="Aya. Manopolas +2",
