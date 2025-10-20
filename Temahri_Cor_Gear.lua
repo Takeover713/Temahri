@@ -38,23 +38,6 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
-----To Upgrade----
-----------------------------------------------------------
---AF -Laksamana's 
-
---Frac +2	P. COR Card x15	Kyou's Scale	Niobium Ingot, Cypress Lumber,Cyan Orb x3
------------------------------------------------------------
---Relic -Lanun
-
---Body +2	Torsoshard: COR x2	Voidtorso: COR x2	Hades' Claw x2	Lanun Frac +3
-
---Feet +1	Footshard: COR x2	Azure Leaf	Rockfin Tooth x1		Lanun Bottes +2
---Bottes +2	Footshard: COR x2	Voidfoot: COR x2	Plovid Flesh x2	Lanun Bottes +3
------------------------------------------------------------
---Empy
-
---ALL
-
     --------------------------------------
     -- Start defining the sets
     --------------------------------------
@@ -118,7 +101,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
-		legs="Chasseur's Culottes +1", 
+		legs="Chasseur's Culottes +3", 
 		feet="Malignance Boots",
 		--neck="Combatant's Torque",
 		neck="Iskur Gorget",
@@ -135,7 +118,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
-		legs="Chasseur's Culottes +1", 
+		legs="Chasseur's Culottes +3", 
 		feet="Malignance Boots",
 		neck="Iskur Gorget",
 		waist="Reiki Yotai",
@@ -170,8 +153,8 @@ function init_gear_sets()
     sets.midcast.RA.Acc = {}
 		
 	sets.buff['Triple Shot'] = {
-		body="Chasseur's Frac +2", --Empy, sortie
-		hands="Lanun Gants +1", --Relic, bastok (done)
+		body="Chasseur's Frac +3",
+		hands="Lanun Gants +3",
 		head="Oshosi Mask +1", --AH
 		legs="Osh. Trousers +1", --AH
 		feet="Osh. Leggings +1", --AH
@@ -182,10 +165,10 @@ function init_gear_sets()
 	
 	sets.precast.RA = {
 		ammo=gear.RAbullet,
-        head="Chass. Tricorne +2", 
+        head="Chass. Tricorne +3", 
 		neck="Commodore Charm +2",
-        body="Laksa. Frac +2", --AF, Omen
-		hands="Lanun Gants +1", --Bastok (Done)
+        body="Laksa. Frac +3",
+		hands="Lanun Gants +3",
 		left_ring="Crepuscular Ring",
 		back={ name="Camulus's Mantle", augments={'INT+20','"Snapshot"+10',}},
 		waist="Yemaya Belt", --Impulse Belt
@@ -195,18 +178,18 @@ function init_gear_sets()
 
     -- Precast sets to enhance JAs
 
-	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +2"} --to +3
-    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"} --+1
-    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +1"} --+4
-    sets.precast.JA['Random Deal'] = {body="Lanun Frac +1"} --
-    sets.precast.FoldDoubleBust = {hands="Lanun Gants +1"} --+3
+	sets.precast.JA['Triple Shot'] = {body="Chasseur's Frac +3"}
+    sets.precast.JA['Snake Eye'] = {legs="Lanun Trews +1"}
+    sets.precast.JA['Wild Card'] = {feet="Lanun Bottes +3"}
+    sets.precast.JA['Random Deal'] = {body="Lanun Frac +3"}
+    sets.precast.FoldDoubleBust = {hands="Lanun Gants +3"}
     
 	sets.precast.CorsairRoll = {
 		--main={ name="Rostam", augments={'Path: C',}},
 		range="Compensator",
-		head="Lanun Tricorne +1", --Relic +3
+		head="Lanun Tricorne +3",
 		neck="Regal Necklace",
-		hands="Chasseur's Gants +2", --Empy, +3
+		hands="Chasseur's Gants +3",
 		left_ring="Barataria Ring",
 		right_ring="Luzaf's Ring",
 		back={ name="Camulus's Mantle", augments={'INT+20','"Snapshot"+10',}},
@@ -215,19 +198,19 @@ function init_gear_sets()
 
     sets.precast.LuzafRing = {ring2="Luzaf's Ring"}
 	sets.precast.CorsairRoll["Bolter's Roll"] = {neck="Regal Necklace",}
-    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +2"})
-    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +2"})
-    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +2"})
-    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +2"})
-    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +2"})
+    sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {legs="Chas. Culottes +3"})
+    sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {feet="Chass. Bottes +3"})
+    sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {head="Chass. Tricorne +3"})
+    sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {body="Chasseur's Frac +3"})
+    sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {hands="Chasseur's Gants +3"})
     
     sets.precast.CorsairShot = {
 		ammo=gear.QDbullet,
 		head="Ikenga's Hat",
-		body="Lanun Frac +1", --+4
+		body="Lanun Frac +3",
 		hands="Malignance Gloves",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Chass. Bottes +2", --Empy +3
+		feet="Chass. Bottes +3",
 		neck="Baetyl Pendant", --Warder of Love
 		waist="Eschan Stone",
 		left_ear="Friomisi Earring",
@@ -297,10 +280,10 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = {
 		ammo=gear.WSbullet,
 		head={ name="Nyame Helm", augments={'Path: B',}},
-		body="Laksa. Frac +2", -- +3
-		hands="Chasseur's Gants +2", -- +3
+		body="Laksa. Frac +3",
+		hands="Chasseur's Gants +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Lanun Bottes +1", -- +3
+		feet="Lanun Bottes +3",
 		neck="Rep. Plat. Medal",
 		waist={ name="Sailfi Belt +1", augments={'Path: A',}},
 		left_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
@@ -314,11 +297,11 @@ function init_gear_sets()
 
     sets.precast.WS['Last Stand'] = {
 		ammo=gear.WSbullet,
-        head="Lanun Tricorne +1", -- +3
-		body="Laksa. Frac +2", -- +3
-		hands="Chasseur's Gants +2", -- +3
+        head="Lanun Tricorne +3",
+		body="Laksa. Frac +3",
+		hands="Chasseur's Gants +3",
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Lanun Bottes +1", -- +4
+		feet="Lanun Bottes +3",
 		neck="Fotia Gorget",
 		waist="Fotia Belt",
 		left_ear="Moonshade Earring",
@@ -343,10 +326,10 @@ function init_gear_sets()
 	sets.precast.WS['Leaden Salute'] = {
 		ammo=gear.MAbullet,
 		head="Pixie Hairpin +1",
-		body="Lanun Frac +1", --+4
+		body="Lanun Frac +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs={ name="Nyame Flanchard", augments={'Path: B',}},
-		feet="Lanun Bottes +1", --+4
+		feet="Lanun Bottes +3",
 		neck="Commodore Charm +2",
 		waist="Eschan Stone",
 		left_ear="Moonshade Earring",
@@ -386,11 +369,11 @@ function init_gear_sets()
 
 	sets.midcast['Absorb-TP'] = {
 		ammo="Pemphredo Tathlum",
-		head="Chass. Tricorne +2",
-		body="Chasseur's Frac +2",
-		hands="Chasseur's Gants +2",
-		legs="Chas. Culottes +2",
-		feet="Chass. Bottes +2",
+		head="Chass. Tricorne +3",
+		body="Chasseur's Frac +3",
+		hands="Chasseur's Gants +3",
+		legs="Chas. Culottes +3",
+		feet="Chass. Bottes +3",
 		neck="Null Loop",
 		waist="Null Belt",
 		left_ear="Digni. Earring",
@@ -422,7 +405,9 @@ end
 
 
 function sub_job_change(new,old)
-send_command('wait 8;input /lockstyleset 20')
+send_command('wait 6;input /lockstyleset 13')
 end
 
-send_command('wait 8;input /lockstyleset 20')
+send_command('wait 6;input /lockstyleset 13')
+
+send_command('exec init.txt')

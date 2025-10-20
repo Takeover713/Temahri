@@ -697,10 +697,10 @@ function select_default_macro_book()
 end
 
 function sub_job_change(new,old)
-send_command('wait 6;input /lockstyleset 17')
+send_command('wait 6;input /lockstyleset 13')
 end
 
-send_command('wait 6;input /lockstyleset 17')
+send_command('wait 6;input /lockstyleset 13')
 
 send_command('exec init.txt')
 
