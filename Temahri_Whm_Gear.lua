@@ -6,49 +6,139 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
-	state.Weapons:options('None','DualWeapons','MeleeWeapons')
-
-	gear.obi_cure_waist = "Austerity Belt +1"
-	gear.obi_cure_back = "Alaunus's Cape"
-
-	gear.obi_nuke_waist = "Sekhmet Corset"
-	gear.obi_high_nuke_waist = "Yamabuki-no-Obi"
-	gear.obi_nuke_back = "Toro Cape"
-
-		-- Additional local binds
-	send_command('bind ^` input /ma "Arise" <t>')
-	send_command('bind !` input /ja "Penury" <me>')
-	send_command('bind @` gs c cycle MagicBurstMode')
-	send_command('bind ^@!` gs c toggle AutoCaress')
-	send_command('bind ^backspace input /ja "Sacrosanctity" <me>')
-	send_command('bind @backspace input /ma "Aurora Storm" <me>')
-	send_command('bind !pause gs c toggle AutoSubMode') --Automatically uses sublimation.
-	send_command('bind !backspace input /ja "Accession" <me>')
-	send_command('bind != input /ja "Sublimation" <me>')
-	send_command('bind ^delete input /ja "Dark Arts" <me>')
-	send_command('bind !delete input /ja "Addendum: Black" <me>')
-	send_command('bind @delete input /ja "Manifestation" <me>')
-	send_command('bind ^\\\\ input /ma "Protectra V" <me>')
-	send_command('bind @\\\\ input /ma "Shellra V" <me>')
-	send_command('bind !\\\\ input /ma "Reraise IV" <me>')
+	state.Weapons:options('None','DualWeapons','MeleeWeapons','Zeni','Zeni2000')
 
     select_default_macro_book(1, 1)
 end
+--C3 730	C4 1200		C5 1400		C6 1800
+--Cg3 855	Cg4 1402	Cg5 1904
+--AF Theophany  ALL
+
+--Theophany Cap - Set bonus enfeebles
+	--Khoma Cloth, S. Faulpie Leather, Cyan Orb x2
+
+--DONE--
+--Mitts - Cure Potency II 
+--Theo. Duckbills - Enhancing Duration and set bonus enfeebles 
+--Theo Bliaut - Cure Potency II and set bonus enfeebles curaga 
+--Th. Pant. - Cursna and Regen
+
+--Relic --DONE--
+
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-    --------------------------------------
-    -- Start defining the sets
-    --------------------------------------
+
+    -----------------------------
+    -- Start defining the sets --
+    -----------------------------
 
 	-- Weapons sets
 	sets.weapons.MeleeWeapons = {main="Izcalli",sub="Ammurapi Shield"}
 	sets.weapons.DualWeapons = {main="Izcalli",sub="Nehushtan"}
-	
+	sets.weapons.Zeni = {range="Soultrapper",ammo="Blank Soulplate"}
+	sets.weapons.Zeni2000 = {range="Soultrapper 2000",ammo="Blank Soulplate"}
     sets.buff.Sublimation = {waist="Embla Sash"}
     sets.buff.DTSublimation = {waist="Embla Sash"}
 	sets.WakeUpWeapons = {main="Prime Maul"}
-    -- Precast Sets
+    
+	-- Idle sets --
+	
+	sets.idle = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Homiliary",
+		head="Bunzi's Hat",
+		body="Ebers Bliaut +3",
+		hands="Bunzi's Gloves",
+		legs="Ebers Pant. +3",
+		feet="Ebers Duckbills +3",
+		neck="Loricate Torque +1",
+		waist="Plat. Mog. Belt",
+		left_ear="Etiolation Earring",
+		right_ear="Eabani Earring",
+		left_ring="Murky Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}
+
+	sets.idle.PDT = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		neck="Loricate Torque +1",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		waist="Null Belt",
+		left_ear="Etiolation Earring",
+		right_ear="Genmei Earring",
+		left_ring="Ayanmo Ring",
+		right_ring="Defending Ring",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}			
+		
+
+	sets.idle.Weak = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Homiliary",
+		head="Bunzi's Hat",
+		body="Ebers Bliaut +3",
+		hands="Bunzi's Gloves",
+		legs="Ebers Pant. +3",
+		feet="Ebers Duckbills +3",
+		neck="Loricate Torque +1",
+		waist="Plat. Mog. Belt",
+		left_ear="Etiolation Earring",
+		right_ear="Hearty Earring",
+		left_ring="Murky Ring",
+		right_ring="Stikini Ring +1",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}
+
+    -- Defense sets
+
+	sets.defense.PDT = {
+		main="Daybreak",
+		sub="Genmei Shield",
+		ammo="Staunch Tathlum +1",
+		head="Nyame Helm",
+		neck="Loricate Torque +1",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		waist="Null Belt",
+		left_ear="Etiolation Earring",
+		right_ear="Genmei Earring",
+		left_ring="Ayanmo Ring",
+		right_ring="Defending Ring",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}
+
+	sets.defense.MDT = {}
+
+    sets.defense.MEVA = {
+		main="Daybreak",
+		ammo="Staunch Tathlum +1",
+		head="Bunzi's Hat",
+		neck="Warder's Charm +1",
+		body="Bunzi's Robe",
+		hands="Bunzi's Gloves",
+		legs="Bunzi's Pants",
+		feet="Bunzi's Sabots",
+		waist="Carrier's Sash",
+		left_ear="Etiolation Earring",
+		right_ear="Eabani Earring",
+		left_ring="Inyanga Ring",
+		right_ring="Defending Ring",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}
+
+	-- Precast Sets
 
     -- Fast cast sets for spells
     sets.precast.FC = {
@@ -58,7 +148,7 @@ function init_gear_sets()
 		head="Bunzi's Hat",
 		body="Inyanga Jubbah +2",
 		hands={ name="Fanatic Gloves", augments={'MP+50','Healing magic skill +10','"Conserve MP"+7','"Fast Cast"+7',}},
-		legs={ name="Lengo Pants", augments={'INT+5','Mag. Acc.+13',}},
+		legs={ name="Lengo Pants", augments={'INT+5','Mag. Acc.+13',}},  --Volte Brais - Dynamis
 		feet="Regal Pumps +1",
 		neck="Cleric's Torque +2",
 		waist="Witful Belt",
@@ -66,8 +156,7 @@ function init_gear_sets()
 		right_ear="Loquac. Earring",
 		left_ring="Prolix Ring",
 		right_ring="Kishar Ring",
-		--back="Perimede Cape",
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
+		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10','Damage taken-5%',}},
 }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash"})
@@ -82,7 +171,7 @@ function init_gear_sets()
 		main="C. Palug hammer",
 		sub="Sors Shield",
 		ammo="Impatiens",
-		head="Piety Cap +1",
+		head="Piety Cap +4",
 		body="Inyanga Jubbah +2",
 		hands="Fanatic Gloves",
 		legs="Ebers Pant. +3",
@@ -93,8 +182,7 @@ function init_gear_sets()
 		right_ear="Loquacious Earring",
 		left_ring="Prolix Ring",
 		right_ring="Kishar Ring",
-		--back="Perimede Cape",
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
+		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10','Damage taken-5%',}},
 })
 
     sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -106,7 +194,8 @@ function init_gear_sets()
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak",sub="Genmei Shield"})
 
     -- Precast sets to enhance JAs
-    sets.precast.JA.Benediction = {body="Piety Bliaut +2"}
+    sets.precast.JA.Benediction = {body="Piety Bliaut +4"}
+	sets.precast.JA.Devotion = {head="Piety Cap +4"}
 
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {}
@@ -175,7 +264,7 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
 		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +2",
+		hands="Theophany Mitts +3",
 		legs="Ebers Pant. +3",
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
@@ -185,7 +274,7 @@ function init_gear_sets()
 		right_ear="Glorious Earring",
 		left_ring="Naji's Loop",
 		right_ring="Mephitas's Ring +1", -- needs augments, Lustreless Hide
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Damage taken-5%',}},
 }
 
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{})
@@ -200,8 +289,8 @@ function init_gear_sets()
 		sub="Thuellaic Ecu +1",
 		ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Theo. Bliaut +2",
-		hands="Theophany Mitts +2",
+		body="Theo. Bliaut +3",
+		hands="Theophany Mitts +3",
 		legs="Ebers Pant. +3",
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
@@ -211,7 +300,7 @@ function init_gear_sets()
 		right_ear="Glorious Earring",
 		left_ring="Naji's Loop",
 		right_ring="Mephitas's Ring +1", --needs augments, Lustreless Hide
-		back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}}, -- back={ name="Mending Cape", augments={'Healing magic skill +4','Enha.mag. skill +1','Mag. Acc.+5','"Cure" potency +4%',}},
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Damage taken-5%',}},
 }
 		
 	sets.midcast.LightWeatherCuraga = set_combine(sets.midcast.Curaga,{})
@@ -255,12 +344,12 @@ function init_gear_sets()
 	head="Vanya Hood",
 	body="Ebers Bliaut +3",
 	hands={ name="Fanatic Gloves", augments={'MP+50','Healing magic skill +10','"Conserve MP"+7','"Fast Cast"+7',}},
-	legs="Th. Pantaloons +2",
+	legs="Theophany Pantaloons +3",
 	feet="Vanya Clogs",
 	neck="Debilis Medallion",
 	waist="Bishop's Sash",
 	left_ear="Meili Earring",
-	right_ear="Ebers Earring +1",
+	right_ear="Ebers Earring +2",
 	left_ring="Menelaus's Ring",
 	right_ring="Haoma's Ring",
 	back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
@@ -293,7 +382,7 @@ function init_gear_sets()
 		body="Inyanga Jubbah +2",
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +4',}},
 		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +7',}},
-		feet="Theo. Duckbills +2",
+		feet="Theo. Duckbills +4",
 		neck="Colossus's Torque",
 		waist="Embla Sash",
 		left_ear="Andoaa Earring",
@@ -311,7 +400,7 @@ function init_gear_sets()
 		body="Inyanga Jubbah +2",
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +4',}},
 		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +7',}},
-		feet="Theo. Duckbills +2",
+		feet="Theo. Duckbills +4",
 		neck="Colossus's Torque",
 		waist="Embla Sash",
 		left_ear="Magnetic Earring",
@@ -338,14 +427,14 @@ function init_gear_sets()
 	main="Bolelabunga",
 	head="Inyanga Tiara +2",
 	hands="Ebers Mitts +3",
-	body="Piety Bliaut +2",
-	legs="Theophany Pantaloons +2"
+	body="Piety Bliaut +4",
+	legs="Theophany Pantaloons +3"
 })
 	
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",feet="Piety Duckbills +2",ear1="Gifted Earring",waist="Sekhmet Corset"})
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",feet="Piety Duckbills +2",ear1="Gifted Earring",waist="Sekhmet Corset"})
-	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",legs="Piety Pantaln. +2",ear1="Gifted Earring",waist="Sekhmet Corset"})
-	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",legs="Piety Pantaln. +2",ear1="Gifted Earring",waist="Sekhmet Corset"})
+	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",legs="Piety Pantaln. +3",ear1="Gifted Earring",waist="Sekhmet Corset"})
+	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",legs="Piety Pantaln. +3",ear1="Gifted Earring",waist="Sekhmet Corset"})
 	
 	
 	sets.midcast.BarElement = {
@@ -355,13 +444,13 @@ function init_gear_sets()
 		head="Ebers Cap +3",
 		body="Ebers Bliaut +3",
 		hands="Ebers Mitts +3",
-		legs={ name="Piety Pantaln. +2", augments={'Enhances "Afflatus Misery" effect',}},
+		legs="Piety Pantaln. +3",
 		feet="Ebers Duckbills +3",
 		neck="Incanter's Torque",
 		waist="Embla Sash",
 		left_ear="Magnetic Earring",
 		right_ear="Andoaa Earring",
-		left_ring="Defending Ring",
+		left_ring="Murky Ring",
 		right_ring="Stikini Ring +1",
 		back="Fi Follet Cape +1",
 }
@@ -380,7 +469,7 @@ function init_gear_sets()
 		body={ name="Witching Robe", augments={'MP+40','Mag. Acc.+10',}},
 		hands={ name="Fanatic Gloves", augments={'MP+50','Healing magic skill +10','"Conserve MP"+7','"Fast Cast"+7',}},
 		legs={ name="Lengo Pants", augments={'INT+5','Mag. Acc.+13',}},
-		feet="Theo. Duckbills +2",
+		feet="Theo. Duckbills +4",
 		neck="Sanctity Necklace",
 		waist={ name="Acuity Belt +1", augments={'Path: A',}},
 		left_ear="Friomisi Earring",
@@ -410,36 +499,36 @@ function init_gear_sets()
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {main="Daybreak",sub="Ammurapi Shield"})
 
 	sets.midcast['Enfeebling Magic'] = {
-		main="Daybreak",
+		main="Daybreak", --Yagrush R15
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Theophany Cap +3
-		body="Theo. Bliaut +2",
-		hands="Regal Cuffs",
-		legs={ name="Chironic Hose", augments={'Mag. Acc.+24','Haste+1','MND+14','"Mag.Atk.Bns."+11',}},
-		feet="Theo. Duckbills +2",
+		head="Theophany Cap +3",
+		body="Theo. Bliaut +3",
+		hands="Theo. Mitts +4",
+		legs="Theophany Pantaloons +4",
+		feet="Theo. Duckbills +4",
 		neck="Null Loop",
-		waist={ name="Acuity Belt +1", augments={'Path: A',}}, -- Obstin. Sash augmented
+		waist="Obstin. Sash",
 		left_ear="Regal Earring",
-		right_ear="Malignance Earring", -- whm sortie earring
+		right_ear="Ebers Earring +2",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Null Shawl",
 }
 
 	sets.midcast['Enfeebling Magic'].Resistant = {
-		main="Daybreak",
+		main="Daybreak", --Yagrush R15
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Ebers Cap +3", -- Theophany Cap +3
-		body="Theo. Bliaut +2",
-		hands="Regal Cuffs",
-		legs={ name="Chironic Hose", augments={'Mag. Acc.+24','Haste+1','MND+14','"Mag.Atk.Bns."+11',}},
-		feet="Theo. Duckbills +2",
+		head="Theophany Cap +3",
+		body="Theo. Bliaut +3",
+		hands="Theo. Mitts +4",
+		legs="Theophany Pantaloons +4",
+		feet="Theo. Duckbills +4",
 		neck="Null Loop",
-		waist={ name="Acuity Belt +1", augments={'Path: A',}}, -- Obstin. Sash augmented
+		waist="Obstin. Sash",
 		left_ear="Regal Earring",
-		right_ear="Malignance Earring", -- whm sortie earring
+		right_ear="Ebers Earring +2",
 		left_ring="Stikini Ring +1",
 		right_ring="Stikini Ring +1",
 		back="Null Shawl",
@@ -482,93 +571,10 @@ function init_gear_sets()
 		waist="Plat. Mog. Belt",
 		left_ear="Etiolation Earring",
 		right_ear="Hearty Earring", -- Eabani earring
-		left_ring="Defending Ring",
+		left_ring="Murky Ring",
 		right_ring="Stikini Ring +1",
 		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},}
 
-    -- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
-	sets.idle = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Bunzi's Hat",
-		body="Ebers Bliaut +3",
-		hands="Bunzi's Gloves",
-		legs="Ebers Pant. +3",
-		feet="Ebers Duckbills +3",
-		neck="Loricate Torque +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Hearty Earring", -- Eabani earring
-		left_ring="Defending Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-}
-
-	sets.idle.Refresh = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Bunzi's Hat",
-		body="Ebers Bliaut +3",
-		hands="Bunzi's Gloves",
-		legs="Ebers Pant. +3",
-		feet="Ebers Duckbills +3",
-		neck="Loricate Torque +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Hearty Earring",
-		left_ring="Defending Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-}
-
-	sets.idle.PDT = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Bunzi's Hat",
-		body="Ebers Bliaut +3",
-		hands="Bunzi's Gloves",
-		legs="Ebers Pant. +3",
-		feet="Ebers Duckbills +3",
-		neck="Loricate Torque +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Hearty Earring",
-		left_ring="Defending Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-}
-	
-		
-	sets.idle.MDT = {}
-		
-	sets.idle.Weak = {
-		main="Daybreak",
-		sub="Genmei Shield",
-		ammo="Homiliary",
-		head="Bunzi's Hat",
-		body="Ebers Bliaut +3",
-		hands="Bunzi's Gloves",
-		legs="Ebers Pant. +3",
-		feet="Ebers Duckbills +3",
-		neck="Loricate Torque +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Hearty Earring",
-		left_ring="Defending Ring",
-		right_ring="Stikini Ring +1",
-		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
-}
-
-    -- Defense sets
-
-	sets.defense.PDT = {}
-
-	sets.defense.MDT = {}
-
-    sets.defense.MEVA = {}
 		
 		-- Engaged sets
 
@@ -618,115 +624,11 @@ end
 function select_default_macro_book()
 	set_macro_page(1, 1)
 end
-
-
-buff_spell_lists = {
-	Auto = {--Options for When are: Always, Engaged, Idle, OutOfCombat, Combat
-		{Name='Refresh III',	Buff='Refresh',		SpellID=894,	When='Always'},
-		{Name='Haste II',		Buff='Haste',		SpellID=511,	When='Always'},
-		{Name='Aurorastorm',	Buff='Aurorastorm',	SpellID=119,	When='Idle'},
-		{Name='Reraise',		Buff='Reraise',		SpellID=135,	When='Always'},
-	},
-	
-	AutoMelee = {
-		{Name='Haste II',		Buff='Haste',		SpellID=511,	When='Engaged'},
-		{Name='Temper II',		Buff='Multi Strikes',SpellID=895,	When='Engaged'},
-	},
-	
-	Default = {
-		{Name='Refresh III',	Buff='Refresh',		SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',		SpellID=511,	Reapply=false},
-		{Name='Stoneskin',		Buff='Stoneskin',	SpellID=54,		Reapply=false},
-		{Name='Shell V',		Buff='Shell',		SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',		SpellID=47,		Reapply=false},
-	},
-
-	MageBuff = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
-		{Name='Blink',			Buff='Blink',			SpellID=53,		Reapply=false},
-		{Name='Gain-INT',		Buff='INT Boost',		SpellID=490,	Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-	},
-	
-	FullMeleeBuff = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Regen II',		Buff='Regen',			SpellID=110,	Reapply=false},
-		{Name='Aquaveil',		Buff='Aquaveil',		SpellID=55,		Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
-		{Name='Blink',			Buff='Blink',			SpellID=53,		Reapply=false},
-		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-		{Name='Shock Spikes',	Buff='Shock Spikes',	SpellID=251,	Reapply=false},
-		{Name='Enthunder',		Buff='Enthunder',		SpellID=104,	Reapply=false},
-		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
-		{Name='Barfire',		Buff='Barfire',			SpellID=60,		Reapply=false},
-		{Name='Barparalyze',	Buff='Barparalyze',		SpellID=74,		Reapply=false},
-	},
-	
-	MeleeBuff = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
-		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-		{Name='Shock Spikes',	Buff='Shock Spikes',	SpellID=251,	Reapply=false},
-		{Name='Enthunder',		Buff='Enthunder',		SpellID=104,	Reapply=false},
-		{Name='Barblizzard',	Buff='Barblizzard',		SpellID=61,		Reapply=false},
-		{Name='Barparalyze',	Buff='Barparalyze',		SpellID=74,		Reapply=false},
-	},
-
-	Odin = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Gain-INT',		Buff='INT Boost',		SpellID=490,	Reapply=false},
-		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
-		{Name='Regen II',		Buff='Regen',			SpellID=110,	Reapply=false},
-		{Name='Enaero',			Buff='Enaero',			SpellID=102,	Reapply=false},
-		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-	},
-	
-	Tolba = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Gain-STR',		Buff='STR Boost',		SpellID=486,	Reapply=false},
-		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
-		{Name='Regen II',		Buff='Regen',			SpellID=110,	Reapply=false},
-		{Name='Enblizzard',		Buff='Enblizzard',		SpellID=104,	Reapply=false},
-		{Name='Stoneskin',		Buff='Stoneskin',		SpellID=54,		Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-		{Name='Barwater',		Buff='Barwater',		SpellID=65,		Reapply=false},
-	},
-	
-	HybridCleave = {
-		{Name='Refresh III',	Buff='Refresh',			SpellID=894,	Reapply=false},
-		{Name='Haste II',		Buff='Haste',			SpellID=511,	Reapply=false},
-		{Name='Phalanx',		Buff='Phalanx',			SpellID=106,	Reapply=false},
-		{Name='Gain-INT',		Buff='INT Boost',		SpellID=490,	Reapply=false},
-		{Name='Enthunder II',	Buff='Enthunder II',	SpellID=316,	Reapply=false},
-		{Name='Temper II',		Buff='Multi Strikes',	SpellID=895,	Reapply=false},
-		{Name='Shell V',		Buff='Shell',			SpellID=52,		Reapply=false},
-		{Name='Protect V',		Buff='Protect',			SpellID=47,		Reapply=false},
-	}}
 	
 function sub_job_change(new,old)
-send_command('wait 5;input /lockstyleset 13')
+send_command('wait 5;input /lockstyleset 20')
 end
 
-send_command('wait 5;input /lockstyleset 13')
+send_command('wait 5;input /lockstyleset 20')
 
 send_command('exec init.txt')

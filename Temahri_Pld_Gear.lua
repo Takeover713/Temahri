@@ -10,7 +10,7 @@ function user_job_setup()
     state.MagicalDefenseMode:options('MDT_HP','MDT','MDT_Reraise')
 	state.ResistDefenseMode:options('MEVA_HP','MEVA')
 	state.IdleMode:options('Tank','Normal','Aminon')
-	state.Weapons:options('BurtgangSrivatsa','BurtgangAegis','BurtgangOchain','Naegling')
+	state.Weapons:options('BurtSrivatsa','BurtAegis','Naegling')
 	
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP','Twilight'}
 	
@@ -20,28 +20,16 @@ function user_job_setup()
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
 	send_command('bind ^backspace input /ja "Shield Bash" <t>')
-	send_command('bind @backspace input /ja "Cover" <stpt>')
-	send_command('bind !backspace input /ja "Sentinel" <me>')
-	send_command('bind @= input /ja "Chivalry" <me>')
-	send_command('bind != input /ja "Palisade" <me>')
-	send_command('bind ^delete input /ja "Provoke" <stnpc>')
-	send_command('bind !delete input /ma "Cure IV" <stal>')
-	send_command('bind @delete input /ma "Flash" <stnpc>')
     send_command('bind !f11 gs c cycle ExtraDefenseMode')
-	send_command('bind @` gs c cycle RuneElement')
-	send_command('bind ^pause gs c toggle AutoRuneMode')
 	send_command('bind ^q gs c set IdleMode Kiting')
 	send_command('bind !q gs c set IdleMode PDT')
-	send_command('bind @f8 gs c toggle AutoTankMode')
-	send_command('bind @f10 gs c toggle TankAutoDefense')
-	send_command('bind ^@!` gs c cycle SkillchainMode')
-	
 	send_command('exec init.txt')
 	
-	autows = 'Atonement'
+		autows_list = {['BurtSrivatsa']='Atonement',['BurtAegis']='Atonement',['Naegling']='Savage Blade'}
+
+	--autows = 'Atonement'
 	autowstp = 1500
-	
-	autofood = 'Miso Ramen +1'
+	--autofood = 'Miso Ramen +1'
 	
     select_default_macro_book()
     update_defense_mode()
@@ -49,15 +37,24 @@ end
 
 --AF		Gallant > Reverence
 --Head:	No		Middling HP+ & Enmity+. Cover has lost a lot of use so the duration effect isn't likely to change anything. Fully upgraded +3 isn't worth the cost outside of completionist circles.	
---Body:	Yes		Major piece with high upgrade value. Massive HP+ swap piece with a significant amount of Fast Cast and Damage Taken-% attached.
+--Body:	Yes	+3	Major piece with high upgrade value. Massive HP+ swap piece with a significant amount of Fast Cast and Damage Taken-% attached.
 --Hands: Yes	Moderately high HP+ and middling Enmity+. Shield Mastery +2 effect won't move the needle much. Fully upgraded +3 isn't worth the cost outside of completionist circles.
 --Legs:	Yes		Still a major HP+ swap piece with the highest HP for this slot. Physical Damage Taken -% is still fairly high and helps balance out sets when swapping in accessories or gear with HP+ augments is a pain on the higher end of the spectrum.
 --Feet:	Yes		Provides one of the largest chunks of shield skill for a shield block build; significant Damage Taken to MP conversion (Your Mileage May Vary); as well as extending Holy circle's duration to four and half minutes and augmenting its damage reduction & damage multiplier effects. Niche but still significant.
 
+--Hands
+--P. PLD Card x9	Kin's Scale	Faulpie Leather x3, Cypress Log,Cyan Orb - Not worth cost??
+
+--Legs
+--P. PLD Card x12	Kin's Scale	Ruthenium Ingot, Cypress Lumber,Cyan Orb x2
+--Still a major HP+ swap piece with the highest HP for this slot. Physical Damage Taken -% is still fairly high and helps balance out sets when swapping in accessories or gear with HP+ augments is a pain on the higher end of the spectrum.
+
+--Feet	
+--Azure Cermet x3, Khoma Thread,Cyan Orb
 ---------------
 
---Relic		Valor > Caballarius
---Head:	Yes		Worth it just for the Rampart duration alone. HP+ and Enmity+ are bonuses. Iron Will augment is only active while worn.
+--Relic		Valor > Caballarius --Need all clears (Windys done!)
+--Head:	Yes	(DONE TO +3)	Worth it just for the Rampart duration alone. HP+ and Enmity+ are bonuses. Iron Will augment is only active while worn.
 --Body:	Yes		High HP+, Damage Taken-%, and Enmity+. While Cover may not see as much use, the damage conversion is still noticeable. Fealty Duration is also a significant gain when it is available.
 --Hands: Yes	Significant HP+ and matching Enmity+ with other sources. Augment increases TP to MP conversion of Chivalry. Worth it just for transforming Shield Bash into a highly accurate non-elemental dispel.
 --Legs:	YMMV	A middle of the road all-round piece. Upgrade discretion up to the player, but keep it around and upgrade at your leisure. Augment extends Invincible by 10 seconds.
@@ -72,21 +69,16 @@ end
 --Legs:	Yes!	Moderate HP+ and high damage taken-%. Adds rare stat of Enmity Retention +12.
 --Feet:	Yes		Low HP+ but moderately high Enmity+ as well as Fast Cast compared to other sources. Worth it just for Divine Emblem+ enhancement.
 
-
 --------------
 
 --Ambu Capes:
---Rudianos's Mantle - 	HP+60, Eva.+20 /Mag. Eva.+20, Mag. Evasion+10, Enmity+10, Phys. dmg. taken-10%
-						--HP+60','Eva.+20 /Mag. Eva.+20, Mag. Evasion+10, "Fast Cast"+10, Phys. dmg. taken-10%
-						--'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%'
-						--'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%'
+--Rudianos's Mantle:'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%'
 
 function init_gear_sets()
 
 		-- Weapons sets
-	sets.weapons.BurtgangOchain = {main="Burtgang",sub="Ochain"}
-	sets.weapons.BurtgangAegis = {main="Burtgang",sub="Aegis"}
-	sets.weapons.BurtgangSrivatsa = {main="Burtgang",sub="Srivatsa"}
+	sets.weapons.BurtAegis = {main="Burtgang",sub="Aegis"}
+	sets.weapons.BurtSrivatsa = {main="Burtgang",sub="Srivatsa"}
 	sets.weapons.Naegling = {main="Naegling",sub="Blurred Shield +1"}
 	
 	-----------------------------------
@@ -127,23 +119,37 @@ function init_gear_sets()
 --}
 
     sets.idle.PDT = {}
-    sets.idle.Block = {}
+    sets.idle.Block = {
+		ammo="Staunch Tathlum +1",
+		head="Chev. Armet +3",
+		body="Sakpata's Plate",
+		--hands="Souv. Handsch. +1", HP+65, Shield Skill+15, PDT-4%
+		legs="Chev. Cuisses +3",
+		--feet="Rev. Leggings +3", AF
+		--neck="Combatant's Torque",
+		--waist="Carrier's Sash",
+		--left_ear="Thureous Earring", --Sang Buaya
+		--right_ear="Chev. Earring +2",
+		--left_ring="Moonlight Ring",
+		--right_ring="Moonlight Ring",
+		--back={ name="Rudianos's Mantle", (HP+60, M.Eva./Eva.+20, Enm.+10, M.Eva+10, Block Chance+5%)
+}
     sets.idle.MDT = {}
 
 	sets.idle.Tank = {
 		ammo="Staunch Tathlum +1",
-		head="Sakpata's Helm",
+		head="Chev. Armet +3",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
-		legs="Sakpata's Cuisses",
+		legs="Chev. Cuisses +3",
 		feet="Sakpata's Leggings",
-		neck="Warder's Charm +1",
-		waist="Flume Belt +1", --waist="Carrier's Sash",
-		left_ear="Odnowa Earring +1", --Check R15?? Lustreless Hide
-		--right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+		neck="Warder's Charm +1", --neck="Unmoving Collar +1", Scales, DEF+20, HP+200
+		waist="Flume Belt +1", --waist="Sailfi Belt +1", STR+15, DA+5%
+		left_ear="Odnowa Earring +1", --left_ear="Tuisto Earring",
+		--right_ear="Cryptic Earring",
 		left_ring="Murky Ring",--left_ring="Moonlight Ring",
 		right_ring="Vocane Ring +1", --right_ring="Moonlight Ring",
-		--back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 		
 	sets.idle.Kiting = {}
@@ -163,8 +169,30 @@ function init_gear_sets()
     
     -- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {}
-    sets.MP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +1"}
-	sets.passive.AbsorbMP = {head="Chev. Armet +1",neck="Coatl Gorget +1",ear2="Ethereal Earring",waist="Flume Belt +1",feet="Rev. Leggings +1"}
+	
+    sets.MP = {
+		ammo="Staunch Tathlum +1",
+		head="Chev. Armet +3",
+		body="Rev. Surcoat +3", --AF
+		hands="Sakpata's Gauntlets",
+		legs="Chev. Cuisses +3",
+		feet="Rev. Leggings +3", --AF
+		neck="Creed Collar", --Chukwa, Tahrogni
+		waist="Flume Belt +1",
+		left_ear="Etiolation Earring",
+		--right_ear="Ethereal Earring",
+		left_ring="Murky Ring",--left_ring="Moonlight Ring",
+		right_ring="Vocane Ring +1", --right_ring="Moonlight Ring",
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
+}
+	
+	sets.passive.AbsorbMP = {
+		head="Chev. Armet +3",
+		neck="Coatl Gorget +1",
+		ear2="Ethereal Earring",
+		waist="Flume Belt +1",
+		feet="Rev. Leggings +3"}
+
     sets.MP_Knockback = {}
     sets.Twilight = {head="Crepuscular Helm", body="Crepuscular Mail"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
@@ -186,23 +214,18 @@ function init_gear_sets()
     
 	sets.engaged = {
 		ammo="Staunch Tathlum +1",
-		--head="Sakpata's Helm",
-		--body="Sakpata's Plate",
-		--hands="Sakpata's Gauntlets",
-		--legs="Sakpata's Cuisses",
-		--feet="Sakpata's Leggings",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Warder's Charm +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Odnowa Earring +1",
-		right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
-		left_ring="Moonlight Ring",
-		right_ring="Moonlight Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		head="Chev. Armet +3",
+		body="Sakpata's Plate",
+		hands="Sakpata's Gauntlets",
+		legs="Chev. Cuisses +3",
+		feet="Sakpata's Leggings",
+		neck="Warder's Charm +1", --neck="Unmoving Collar +1", Scales, DEF+20, HP+200
+		waist="Flume Belt +1", --waist="Sailfi Belt +1", STR+15, DA+5%
+		left_ear="Tuisto Earring",
+		right_ear="Cryptic Earring",
+		left_ring="Murky Ring",--left_ring="Moonlight Ring",
+		right_ring="Vocane Ring +1", --right_ring="Moonlight Ring",
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 
     sets.engaged.Acc = {}
@@ -211,18 +234,18 @@ function init_gear_sets()
 
 	sets.engaged.Tank = {
 		ammo="Staunch Tathlum +1",
-		head="Sakpata's Helm",
+		head="Chev. Armet +3",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
-		legs="Sakpata's Cuisses",
+		legs="Chev. Cuisses +3",
 		feet="Sakpata's Leggings",
-		neck="Warder's Charm +1",
-		waist="Plat. Mog. Belt",
-		left_ear="Odnowa Earring +1",
-		right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
-		left_ring="Murky Ring", --Moonlight Ring
-		right_ring="Vocane Ring +1",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		neck="Warder's Charm +1", --neck="Unmoving Collar +1", Scales, DEF+20, HP+200
+		waist="Flume Belt +1", --waist="Sailfi Belt +1", STR+15, DA+5%
+		left_ear="Tuisto Earring",
+		right_ear="Cryptic Earring",
+		left_ring="Murky Ring",--left_ring="Moonlight Ring",
+		right_ring="Vocane Ring +1", --right_ring="Moonlight Ring",
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 		
 	sets.engaged.DDTank = {}
@@ -237,24 +260,24 @@ function init_gear_sets()
 	
     sets.Enmity = {
 		ammo="Staunch Tathlum +1", --ammo="Sapience Orb", --Umdhlebi - Zi-Tah
-		head="Loess Barbuta +1", --Hidhaegg, Lustreless Wing
-		body="Chev. Cuirass +3", --Empy
+		head="Loess Barbuta +1",
+		body="Chev. Cuirass +3", --Souv. Cuirass +1: HP+105, Enm.+9, Cure Rec.+15%
 		hands="Regal Gauntlets",
 		legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}, --Bushin Abjuration
-		feet="Chev. Sabatons +1", --Empy
+		feet="Chev. Sabatons +3", --?Eschite Greaves, Vidala. Augment Path A: HP+80, PDT-4%, Enmity+7
 		neck="Unmoving Collar +1", --Lustreless Scale (DEF +30 HP +200) --neck="Moonlight Necklace",
-		waist="Warwolf Belt", --waist="Creed Baudrier", --Ironclad Executioner, Aby - Vunk
-		left_ear="Odnowa Earring +1",
+		--waist="Creed Baudrier", --Ironclad Executioner, Aby - Vunk
+		left_ear="Odnowa Earring +1", --Trux Earring, DM II
 		right_ear="Cryptic Earring",
-		left_ring="Supershear Ring",
-		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		left_ring="Supershear Ring", --Apeile Ring
+		right_ring="Eihwaz Ring", --Apeile Ring +1, Scales (DEF+20, MDB +5)
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 		
     sets.Enmity.SIRD = {
 		ammo="Staunch Tathlum +1",
-		--head="Loess Barbuta +1", Hidhaegg
-		body="Chev. Cuirass +3", --Empy
+		head="Loess Barbuta +1",
+		body="Chev. Cuirass +3",
     	hands="Regal Gauntlets",
 		legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}}, --August, SR
 		feet={ name="Odyssean Greaves", augments={'Weapon Skill Acc.+11','Pet: VIT+5','Phalanx +3','Accuracy+19 Attack+19','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}, --Dazzling Dolores
@@ -264,13 +287,13 @@ function init_gear_sets()
 		right_ear="Cryptic Earring",
 		lleft_ring="Evanescence Ring",
 		right_ring="Murky Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 	
     sets.Enmity.DT = {
 		ammo="Staunch Tathlum +1", --ammo="Sapience Orb", --Umdhlebi - Zi-Tah
-		--head="Loess Barbuta +1", Hidhaegg
-		body="Rev. Surcoat +3", --AF
+		head="Loess Barbuta +1",
+		body="Rev. Surcoat +2", --AF
 		hands="Regal Gauntlets",
 		legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}}, --August, SR
 		feet={ name="Odyssean Greaves", augments={'Weapon Skill Acc.+11','Pet: VIT+5','Phalanx +3','Accuracy+19 Attack+19','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}, --Dazzling Dolores
@@ -280,23 +303,23 @@ function init_gear_sets()
 		right_ear="Cryptic Earring",
 		left_ring="Supershear Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},	
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},	
 }
 		
     -- Precast sets to enhance JAs
     sets.precast.JA['Invincible'] = set_combine(sets.Enmity,{legs="Cab. Breeches +1"})
-    sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity,{feet="Rev. Leggings +1"})
+    sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity,{feet="Rev. Leggings +3"})
     sets.precast.JA['Sentinel'] = set_combine(sets.Enmity,{feet="Cab. Leggings +1"})
-    sets.precast.JA['Rampart'] = set_combine(sets.Enmity,{head="Cab. Coronet +1"}) --head="Valor Coronet" (Also Vit?)
+    sets.precast.JA['Rampart'] = set_combine(sets.Enmity,{head="Cab. Coronet +3"}) --head="Valor Coronet" (Also Vit?)
     sets.precast.JA['Fealty'] = set_combine(sets.Enmity,{body="Cab. Surcoat +1"})
-    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity,{feet="Chev. Sabatons +1"})
+    sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity,{feet="Chev. Sabatons +3"})
     sets.precast.JA['Cover'] = set_combine(sets.Enmity, {body="Cab. Surcoat +1"}) --head="Rev. Coronet +1",
     sets.precast.JA['Invincible'].DT = set_combine(sets.Enmity.DT,{legs="Cab. Breeches +1"})
-    sets.precast.JA['Holy Circle'].DT = set_combine(sets.Enmity.DT,{feet="Rev. Leggings +1"})
+    sets.precast.JA['Holy Circle'].DT = set_combine(sets.Enmity.DT,{feet="Rev. Leggings +3"})
     sets.precast.JA['Sentinel'].DT = set_combine(sets.Enmity.DT,{feet="Cab. Leggings +1"})
-    sets.precast.JA['Rampart'].DT = set_combine(sets.Enmity.DT,{head="Cab. Coronet +1"}) --head="Valor Coronet" (Also Vit?)
+    sets.precast.JA['Rampart'].DT = set_combine(sets.Enmity.DT,{head="Cab. Coronet +3"})
     sets.precast.JA['Fealty'].DT = set_combine(sets.Enmity.DT,{body="Cab. Surcoat +1"})
-    sets.precast.JA['Divine Emblem'].DT = set_combine(sets.Enmity.DT,{feet="Chev. Sabatons +1"})
+    sets.precast.JA['Divine Emblem'].DT = set_combine(sets.Enmity.DT,{feet="Chev. Sabatons +3"})
     sets.precast.JA['Cover'].DT = set_combine(sets.Enmity.DT, {body="Cab. Surcoat +1"}) --head="Rev. Coronet +1",
 	
     -- add mnd for Chivalry
@@ -306,7 +329,7 @@ function init_gear_sets()
 		neck="Unmoving Collar +1",
 		ear1="Nourish. Earring",
 		ear2="Nourish. Earring +1",
-		body="Rev. Surcoat +3",
+		body="Rev. Surcoat +2",
 		hands="Cab. Gauntlets +1",
 		ring1="Stikini Ring +1",
 		ring2="Rufescent Ring",
@@ -315,14 +338,25 @@ function init_gear_sets()
 		legs="Nyame Flanchard",
 		feet="Carmine Greaves +1"}
 		
-    sets.precast.JA['Chivalry'].DT = {ammo="Paeapua",
-		head="Nyame Helm",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Tuisto Earring",
-		body="Rev. Surcoat +3",hands="Cab. Gauntlets +1",ring1="Gelatinous Ring +1",ring2="Moonlight Ring",
-		back="Moonlight Cape",waist="Luminary Sash",legs="Nyame Flanchard",feet="Carmine Greaves +1"}
+    sets.precast.JA['Chivalry'].DT = {
+		ammo="Paeapua",
+		head="Nyame Helm",
+		neck="Unmoving Collar +1",
+		ear1="Odnowa Earring +1"
+		,ear2="Tuisto Earring",
+		body="Rev. Surcoat +3",
+		hands="Cab. Gauntlets +1",
+		ring1="Gelatinous Ring +1",
+		ring2="Moonlight Ring",
+		back="Moonlight Cape",
+		waist="Luminary Sash",
+		legs="Nyame Flanchard",
+		feet="Carmine Greaves +1"
+}
 
 	sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {
 		ammo="Staunch Tathlum +1", --ammo="Sapience Orb", --Umdhlebi - Zi-Tah
-		--head="Loess Barbuta +1", Hidhaegg
+		head="Loess Barbuta +1",
 		--Bushin Abjuration: Body / body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		--hands={ name="Cab. Gauntlets +3", augments={'Enhances "Chivalry" effect',}}, --Relic
 		--Bushin Abjuration / legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -333,7 +367,7 @@ function init_gear_sets()
 		right_ear="Erilaz Earring +1",
 		left_ring="Murky Ring", --Moonlight Ring?
 		right_ring="Vocane Ring +1",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 })
 
     sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
@@ -346,7 +380,7 @@ function init_gear_sets()
 	
 	sets.precast.JA['Shield Bash'].DT = set_combine(sets.Enmity.DT, {
 		ammo="Staunch Tathlum +1", --ammo="Sapience Orb", --Umdhlebi - Zi-Tah
-		--head="Loess Barbuta +1", Hidhaegg
+		head="Loess Barbuta +1",
 		--Bushin Abjuration: Body / body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		--hands={ name="Cab. Gauntlets +3", augments={'Enhances "Chivalry" effect',}}, --Relic
 		--Bushin Abjuration / legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
@@ -357,7 +391,7 @@ function init_gear_sets()
 		right_ear="Erilaz Earring +1",
 		left_ring="Murky Ring", --Moonlight Ring?
 		right_ring="Vocane Ring +1",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 })
 
 	
@@ -384,36 +418,36 @@ function init_gear_sets()
     -- Fast cast sets for spells
     
     sets.precast.FC = {
-		ammo="Sapience Orb",
+		--ammo="Sapience Orb",
 		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}}, --Shinryu Abjuration: Head
-		body="Rev. Surcoat +3", --AF
+		body="Rev. Surcoat +4",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		--legs={ name="Eschite Cuisses", augments={'"Mag.Atk.Bns."+25','"Conserve MP"+6','"Fast Cast"+5',}}, --Tangata Manu - Zi-Tah
-		feet="Chev. Sabatons +3", --Empy
+		feet="Chev. Sabatons +3",
 		neck="Voltsurge Torque",
 		waist="Plat. Mog. Belt",
 		left_ear="Etiolation Earring",
 		right_ear="Loquac. Earring",
 		left_ring="Prolix Ring",
 		right_ring="Kishar Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}},
 }
 	
 		
     sets.precast.FC.DT = {
-		ammo="Sapience Orb",
+		--ammo="Sapience Orb",
 		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}}, --Shinryu Abjuration: Head
-		body="Rev. Surcoat +3", --AF
+		body="Rev. Surcoat +4",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
 		--legs={ name="Eschite Cuisses", augments={'"Mag.Atk.Bns."+25','"Conserve MP"+6','"Fast Cast"+5',}}, --Tangata Manu - Zi-Tah
-		feet="Chev. Sabatons +3", --Empy
+		feet="Chev. Sabatons +3",
 		neck="Voltsurge Torque",
 		waist="Plat. Mog. Belt",
 		left_ear="Etiolation Earring",
 		right_ear="Loquac. Earring",
 		left_ring="Prolix Ring",
 		right_ring="Kishar Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}},
 }
 		
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {}) -- waist="Siegel Sash"
@@ -423,15 +457,15 @@ function init_gear_sets()
     -- Weaponskill sets
     -- Default set for any weaponskill that isn't any more specifically defined
     sets.precast.WS = {
-		--ammo="Ginsen", --ammo="Crepuscular Pebble",
-		head="Nyame Helm",
+		ammo="Aurgelmir Orb",
+		head="Nyame Helm", --Path B
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Rep. Plat. Medal",
-		waist="Fotia Belt", --waist="Sailfi Belt +1",
-		left_ear="Odnowa Earring +1",
+		legs="Nyame Flanchard", --Path B
+		feet="Nyame Sollerets", --Path B
+		neck="Fotia Gorget", --Kgt. Beads +2 or be cheap and use Fotia Gorget. 
+		waist="Sailfi Belt +1",
+		left_ear="Moonshade Earring",
 		right_ear="Thrud Earring",
 		left_ring="Epaminondas's Ring",
 		--right_ring="Gelatinous Ring +1",
@@ -439,15 +473,15 @@ function init_gear_sets()
 }
 		
     sets.precast.WS.DT = {
-		--ammo="Ginsen", --ammo="Crepuscular Pebble",
+		ammo="Aurgelmir Orb",
 		head="Nyame Helm",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Rep. Plat. Medal",
-		waist="Fotia Belt", --waist="Sailfi Belt +1",
-		left_ear="Odnowa Earring +1",
+		neck="Fotia Gorget", --Kgt. Beads +2 or be cheap and use Fotia Gorget. 
+		waist="Sailfi Belt +1",
+		left_ear="Moonshade Earring",
 		right_ear="Thrud Earring",
 		left_ring="Epaminondas's Ring",
 		--right_ring="Gelatinous Ring +1",
@@ -455,14 +489,14 @@ function init_gear_sets()
 }
 
     sets.precast.WS.Acc = {
-		--ammo="Ginsen", --ammo="Crepuscular Pebble",
+		ammo="Crepuscular Pebble",
 		head="Nyame Helm",
 		body="Sakpata's Plate",
 		hands="Sakpata's Gauntlets",
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
-		neck="Rep. Plat. Medal",
-		waist="Fotia Belt", --waist="Sailfi Belt +1",
+		neck="Fotia Gorget",
+		waist="Sailfi Belt +1",
 		left_ear="Odnowa Earring +1",
 		right_ear="Thrud Earring",
 		left_ring="Epaminondas's Ring",
@@ -477,37 +511,8 @@ function init_gear_sets()
 	sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {})
 
-	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-		ammo="Crepuscular Pebble",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Rep. Plat. Medal",
-		waist="Sailfi Belt +1",
-		left_ear="Odnowa Earring +1",
-		right_ear="Thrud Earring", --?? Maybe have
-		left_ring="Epaminondas's Ring",
-		--right_ring="Gelatinous Ring +1",
-		back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
-})
-
-    sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {
-		ammo="Crepuscular Pebble",
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-		neck="Rep. Plat. Medal",
-		waist="Sailfi Belt +1",
-		left_ear="Odnowa Earring +1",
-		right_ear="Thrud Earring", --?? Maybe have
-		left_ring="Epaminondas's Ring",
-		--right_ring="Gelatinous Ring +1",
-		back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
-})
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+    sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
 	
 			--R15
 	-- ammo="Crepuscular Pebble",
@@ -543,19 +548,19 @@ function init_gear_sets()
 	sets.precast.WS['Flat Blade'] = {}
 
     sets.precast.WS['Sanguine Blade'] = {
-	ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
-    neck="Sibyl Scarf",
-    waist="Orpheus's Sash",
-    left_ear="Friomisi Earring",
-    right_ear="Thrud Earring",
-    left_ring="Epaminondas's Ring",
-    right_ring="Archon Ring",
-    back="Moonbeam Cape",
+		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+		neck="Sibyl Scarf",
+		waist="Orpheus's Sash",
+		left_ear="Friomisi Earring",
+		right_ear="Thrud Earring",
+		left_ring="Epaminondas's Ring",
+		right_ring="Archon Ring",
+		back="Moonbeam Cape",
 }
 		
 
@@ -569,10 +574,10 @@ function init_gear_sets()
 		neck="Moonlight Necklace",
 		waist="Fotia Belt",
 		left_ear="Odnowa Earring +1",
-		right_ear={ name="Moonshade Earring", augments={'Accuracy+4','TP Bonus +250',}},
+		right_ear="Moonshade Earring",
 		left_ring="Vexer Ring +1",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}},
 }
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
@@ -596,30 +601,26 @@ function init_gear_sets()
 
     sets.midcast.Cure = {
 		ammo="Sapience Orb",
-		head={ name="Sakpata's Helm", augments={'Path: A',}},
+		head="Sakpata's Helm",
 		body="Sakpata's Plate",
-		hands={ name="Macabre Gaunt. +1", augments={'Path: A',}},
+		hands={ name="Macabre Gaunt. +1", augments={'Path: A',}}, --Abyssdiver Unity, Lustreless Scale
 		legs={ name="Sakpata's Cuisses", augments={'Path: A',}},
 		feet={ name="Sakpata's Leggings", augments={'Path: A',}},
-		neck="Sacro Gorget",
+		neck="Chev. Sabatons +3",
 		waist="Carrier's Sash",
 		left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-		right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+		--right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
 		left_ring="Moonlight Ring",
 		right_ring="Vocane Ring +1",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
 	}
 	
 --Egoist's Tathlum
---Loess Barbuta +1
---Enm+10, DT-10%, All Attr.+10
---Souv. Cuirass +1
---HP+105, Enm.+9, Cure Rec.+15%
---Macabre Gaunt. +1
---M.Eva+75, Resist All+10, All Attr.+10
---Souv. Diechlings +1
---HP+105, Enm.+9, Cure Rec.+15%
+--Loess Barbuta +1 --Enm+10, DT-10%, All Attr.+10
+--Souv. Cuirass +1 --HP+105, Enm.+9, Cure Rec.+15%
+--Macabre Gaunt. +1 --M.Eva+75, Resist All+10, All Attr.+10
+--Souv. Diechlings +1 --HP+105, Enm.+9, Cure Rec.+15%
 --Chev. Sabatons +3
 --Sacro Gorget
 --Tuisto Earring
@@ -627,8 +628,7 @@ function init_gear_sets()
 --Vexer Ring +1
 --Eihwaz Ring
 --Creed Baudrier
---Rudianos's Mantle
---HP+60, M.Eva/Eva+20, M.Eva+10, Cure Pot.+10%, PDT-10%
+--Rudianos's Mantle --HP+60, M.Eva/Eva+20, M.Eva+10, Cure Pot.+10%, PDT-10%
 
 		
 		
@@ -643,31 +643,25 @@ function init_gear_sets()
 		neck="Moonlight Necklace",
 		waist="Audumbla Sash",
 		left_ear="Tuisto Earring",
-		right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+		--right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
 		left_ring="Gelatinous Ring +1",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
 	}
 		
 --Staunch Tathlum +1
---Souv. Schaller +1
---HP+105, Enm.+9, Cure Rec.+15%
---Souv. Cuirass +1
---HP+105, Enm.+9, Cure Rec.+15%
---Macabre Gaunt. +1
---M.Eva+75, Resist All+10, All Attr.+10
+--Souv. Schaller +1 --HP+105, Enm.+9, Cure Rec.+15%
+--Souv. Cuirass +1 --HP+105, Enm.+9, Cure Rec.+15%
+--Macabre Gaunt. +1 --M.Eva+75, Resist All+10, All Attr.+10
 --Founder's Hose
---Odyssean Greaves
---Cure Pot. +4~6%
+--Odyssean Greaves --Cure Pot. +4~6%
 --Moonlight Necklace
 --Tuisto Earring
 --Nourish. Earring +1
---Gelatinous Ring +1
---VIT+15, HP+100
+--Gelatinous Ring +1 --VIT+15, HP+100
 --Eihwaz Ring
 --Audumbla Sash
---Rudianos's Mantle
---HP+60, M.Eva/Eva+20, M.Eva+10, Cure Pot.+10%, PDT-10%
+--Rudianos's Mantle --HP+60, M.Eva/Eva+20, M.Eva+10, Cure Pot.+10%, PDT-10%
 
 		
 		
@@ -685,13 +679,13 @@ function init_gear_sets()
 		--right_ear="Chev. Earring +2",
 		--left_ring="Gelatinous Ring +1",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
 }
 		
     sets.midcast.Reprisal = {
 		ammo="Sapience Orb",
 		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-		body="Rev. Surcoat +3", -- shabti Cuirass +1 if i want to add duration but not ilvl 119 so maybe i dont want that
+		body="Rev. Surcoat +4",
 		hands="Regal Gauntlets",
 		legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
 		feet={ name="Odyssean Greaves", augments={'"Fast Cast"+4','Mag. Acc.+15','"Mag.Atk.Bns."+11',}},
@@ -701,28 +695,22 @@ function init_gear_sets()
 		right_ear="Cryptic Earring",
 		left_ring="Gelatinous Ring +1",
 		right_ring="Moonlight Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Damage taken-5%',}},
 }
 
---Priwen
---HP+50, M.Eva+50, DT-3%
+--Priwen --HP+50, M.Eva+50, DT-3%
 --Sapience Orb
---Carmine Mask +1
---Acc/M.Acc+20/12, FC+4%
+--Carmine Mask +1 --Acc/M.Acc+20/12, FC+4%
 --Shab. Cuirass +1
---Souv. Handsch. +1
---HP+105, Enm.+9, Cure Rec.+15%
---Souv. Diechlings +1
---HP +105, Enm. +9, Cure Rec. +15%
---Eschite Greaves
---HP+80, PDT-4%, Enmity+7
+--Souv. Handsch. +1 --HP+105, Enm.+9, Cure Rec.+15%
+--Souv. Diechlings +1 --HP +105, Enm. +9, Cure Rec. +15%
+--Eschite Greaves --HP+80, PDT-4%, Enmity+7
 --Moonlight Necklace
 --Trux Earring
 --Cryptic Earring
 --Supershear Ring
 --Eihwaz Ring
---Creed Baudrier
---Rudianos's Mantle - HP+60, Eva/M.Eva+20, FC+10%, M.Eva+10, PDT-10%
+--Creed Baudrier --Rudianos's Mantle - HP+60, Eva/M.Eva+20, FC+10%, M.Eva+10, PDT-10%
 
 
 	sets.Self_Healing = {
@@ -739,43 +727,43 @@ function init_gear_sets()
 		left_ring="Moonlight Ring",
 		--right_ring="Vengeful Ring",
 		right_ring="Eihwaz Ring",
-		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
+		back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
 }
 		
 	sets.Self_Healing.SIRD = {
 	ammo="Staunch Tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    --hands="Macabre Gaunt. +1",
+    --hands="Macabre Gaunt. +1", --Abyssdiver
 	hands="Regal Gauntlets",
     legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
     feet={ name="Odyssean Greaves", augments={'"Fast Cast"+4','Mag. Acc.+15','"Mag.Atk.Bns."+11',}},
     neck="Moonlight Necklace",
     waist="Audumbla Sash",
     left_ear="Tuisto Earring",
-    right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+    --right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
     left_ring="Gelatinous Ring +1",
     right_ring="Eihwaz Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
-	}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
+}
 	
 		
 	sets.Self_Healing.DT = {
 	ammo="Staunch Tathlum +1",
     head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
     body={ name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    --hands="Macabre Gaunt. +1",
+    --hands="Macabre Gaunt. +1", --Abyssdiver
 	hands="Regal Gauntlets",
     legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
     feet={ name="Odyssean Greaves", augments={'"Fast Cast"+4','Mag. Acc.+15','"Mag.Atk.Bns."+11',}},
     neck="Moonlight Necklace",
     waist="Audumbla Sash",
     left_ear="Tuisto Earring",
-    right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+    --right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
     left_ring="Gelatinous Ring +1",
     right_ring="Eihwaz Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Phys. dmg. taken-10%',}},
-	}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Cure" potency +10%','Damage taken-5%',}},
+}
 
 	sets.Cure_Received = {hands="Souv. Handsch. +1",feet="Souveran Schuhs +1"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
@@ -838,13 +826,13 @@ function init_gear_sets()
 		main="Sakpata's Sword", 
 		Sub="Priwen",
 		ammo="Sapience Orb",
-    --head={ name="Odyssean Helm", augments={'Accuracy+21','Weapon skill damage +5%','STR+10','Attack+10',}}, dark matter augments phalanx +5
+		--head={ name="Odyssean Helm", augments={'Accuracy+21','Weapon skill damage +5%','STR+10','Attack+10',}}, dark matter augments phalanx +5
 		head="Sakpata's Helm",
 		body={ name="Odyss. Chestplate", augments={'"Drain" and "Aspir" potency +1','Pet: Phys. dmg. taken -2%','Phalanx +2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
 		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
 		legs="Sakpata's Cuisses",
 		feet={ name="Odyssean Greaves", augments={'Weapon Skill Acc.+11','Pet: VIT+5','Phalanx +3','Accuracy+19 Attack+19','Mag. Acc.+2 "Mag.Atk.Bns."+2',}},
-    --neck="Unmoving Collar +1",
+		neck="Unmoving Collar +1",
 		neck="Moonlight Necklace",
 		waist="Audumbla Sash",
 		left_ear="Odnowa Earring +1",
@@ -854,22 +842,23 @@ function init_gear_sets()
 		back={ name="Weard Mantle", augments={'VIT+4','DEX+3','Enmity+5','Phalanx +3',}},
 	})
 	sets.midcast.Phalanx.SIRD = set_combine(sets.midcast['Enhancing Magic'].SIRD, {
-	main="Sakpata's Sword", 
-	Sub="Priwen",
-	ammo="Staunch Tathlum +1",
-    head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    body={ name="Odyss. Chestplate", augments={'"Drain" and "Aspir" potency +1','Pet: Phys. dmg. taken -2%','Phalanx +2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
-    hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
-    legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
-    feet={ name="Odyssean Greaves", augments={'Weapon Skill Acc.+11','Pet: VIT+5','Phalanx +3','Accuracy+19 Attack+19','Mag. Acc.+2 "Mag.Atk.Bns."+2',}},
-    neck="Moonlight Necklace",
-    waist="Audumbla Sash",
-    left_ear="Odnowa Earring +1",
-    right_ear="Mimir Earring",
-    left_ring="Moonlight Ring",
-    right_ring="Moonlight Ring",
-    back={ name="Weard Mantle", augments={'VIT+4','DEX+3','Enmity+5','Phalanx +3',}},
-	})
+		main="Sakpata's Sword", 
+		Sub="Priwen",
+		ammo="Staunch Tathlum +1",
+		head={ name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+		body={ name="Odyss. Chestplate", augments={'"Drain" and "Aspir" potency +1','Pet: Phys. dmg. taken -2%','Phalanx +2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}},
+		hands={ name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}},
+		legs={ name="Founder's Hose", augments={'MND+10','Mag. Acc.+15','Attack+15','Breath dmg. taken -5%',}},
+		feet={ name="Odyssean Greaves", augments={'Weapon Skill Acc.+11','Pet: VIT+5','Phalanx +3','Accuracy+19 Attack+19','Mag. Acc.+2 "Mag.Atk.Bns."+2',}},
+		neck="Moonlight Necklace",
+		waist="Audumbla Sash",
+		left_ear="Odnowa Earring +1",
+		right_ear="Mimir Earring",
+		left_ring="Moonlight Ring",
+		right_ring="Moonlight Ring",
+		back={ name="Weard Mantle", augments={'VIT+4','DEX+3','Enmity+5','Phalanx +3',}},
+})
+
 	sets.midcast.Phalanx.DT = set_combine(sets.midcast.Phalanx.SIRD, {})	
 	sets.Phalanx_Received = {main="Sakpata's Sword",hands="Souv. Handsch. +1",back="Weard Mantle",legs="Sakpata's Cuisses",feet="Souveran Schuhs +1"}
 		
