@@ -264,7 +264,7 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
 		body="Ebers Bliaut +3",
-		hands="Theophany Mitts +3",
+		hands="Theophany Mitts +4",
 		legs="Ebers Pant. +3",
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
@@ -289,8 +289,8 @@ function init_gear_sets()
 		sub="Thuellaic Ecu +1",
 		ammo="Pemphredo Tathlum",
 		head="Ebers Cap +3", -- Kaykaus Mitra +1 C: Spell interruption rate -12%
-		body="Theo. Bliaut +3",
-		hands="Theophany Mitts +3",
+		body="Theo. Bliaut +4",
+		hands="Theophany Mitts +4",
 		legs="Ebers Pant. +3",
 		feet="Vanya Clogs",--Kaykaus Boots +1 D: Mag. Acc. +20,Cure Potency +6,Fast Cast +4%
 		neck={ name="Clr. Torque +2", augments={'Path: A',}},
@@ -344,7 +344,7 @@ function init_gear_sets()
 	head="Vanya Hood",
 	body="Ebers Bliaut +3",
 	hands={ name="Fanatic Gloves", augments={'MP+50','Healing magic skill +10','"Conserve MP"+7','"Fast Cast"+7',}},
-	legs="Theophany Pantaloons +3",
+	legs="Theophany Pantaloons +4",
 	feet="Vanya Clogs",
 	neck="Debilis Medallion",
 	waist="Bishop's Sash",
@@ -428,7 +428,7 @@ function init_gear_sets()
 	head="Inyanga Tiara +2",
 	hands="Ebers Mitts +3",
 	body="Piety Bliaut +4",
-	legs="Theophany Pantaloons +3"
+	legs="Theophany Pantaloons +4"
 })
 	
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Vocane Ring +1",feet="Piety Duckbills +2",ear1="Gifted Earring",waist="Sekhmet Corset"})
@@ -502,8 +502,8 @@ function init_gear_sets()
 		main="Daybreak", --Yagrush R15
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Theophany Cap +3",
-		body="Theo. Bliaut +3",
+		head="Theophany Cap +2",
+		body="Theo. Bliaut +4",
 		hands="Theo. Mitts +4",
 		legs="Theophany Pantaloons +4",
 		feet="Theo. Duckbills +4",
@@ -520,8 +520,8 @@ function init_gear_sets()
 		main="Daybreak", --Yagrush R15
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
-		head="Theophany Cap +3",
-		body="Theo. Bliaut +3",
+		head="Theophany Cap +2",
+		body="Theo. Bliaut +4",
 		hands="Theo. Mitts +4",
 		legs="Theophany Pantaloons +4",
 		feet="Theo. Duckbills +4",
@@ -613,7 +613,7 @@ function init_gear_sets()
 
 	--sets.HPCure = {main="Queller Rod",sub="Ammurapi Shield",ammo="Pemphredo Tathlum",
 		--head="Blistering Sallet +1",neck="Nodens Gorget",ear1="Etiolation Earring",ear2="Ethereal Earring",
-		--body="Kaykaus Bliaut",hands="theophany mitts +3",ring1="Kunaji Ring",ring2="Meridian Ring",
+		--body="Kaykaus Bliaut",hands="Theophany Mitts +4",ring1="Kunaji Ring",ring2="Meridian Ring",
 		--back="Alaunus's Cape",waist="Eschan Stone",legs="Ebers Pant. +3",feet="Kaykaus Boots"}
 
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
