@@ -11,7 +11,9 @@ function user_setup()
     -------------------------
 
 --	Scholar's > Academic (Artifact)
---Academic +2 & +3 (Omen) 			Kei Scale (2/4)
+--Tem needs all AF! >.<
+
+--Academic +2 > +3 (Omen)
 
 --Head		P. SCH Card x40	Kei's Scale	Khoma Cloth, S. Faulpie Leather,Cyan Orb x2
 --Body		P. SCH Card x50	Kei's Scale	Niobium Ingot, Cypress Lumber,Cyan Orb x3
@@ -20,11 +22,16 @@ function user_setup()
 
 				--DO NOT GET: Legs(Only stun)
 
---	Argute's > Pedagogy (Relic Attire)=Dynamis Bastok: O Windy: X Sandy: X Jeuno: X
---Pedagogy +2 & +3 (Dynamis)//
---Head,		Headshard: SCH x2	Cyan Coral	Gabbrath Horn x3	>>>		Headshard: SCH x3	Voidhead: SCH x3	Defiant Scarf x3	Pedagogy Mortarboard +3
---Body		Torsoshard: SCH x2	Cyan Coral	Yggdreant Bole x3	>>>		Torsoshard: SCH x3	Voidtorso: SCH x3	Hades' Claw x3		Pedagogy Gown +3
+--	Argute's > Pedagogy (Relic Attire) Needs Jeuno Clear
+--Argute > Pedagogy +3 (Dynamis)
 
+--Head,		Headshard: SCH x2	Cyan Coral	Gabbrath Horn x3
+	--		Headshard: SCH x3	Voidhead: SCH x3	Defiant Scarf x3	Pedagogy Mortarboard +3
+--Body		Torsoshard: SCH x2	Cyan Coral	Yggdreant Bole x3	>>>		Torsoshard: SCH x3	Voidtorso: SCH x3	Hades' Claw x3		Pedagogy Gown +3
+--Legs 		Rem's Tale Ch.8 x8	Akvan's Pennon	Bztavian Stinger 	>> +1 <<
+	--		Legshard: SCH x2	Cyan Coral		Waktza Rostrum x1 	>> +2 << 
+	--		Legshard: SCH x2	Voidleg: SCH x2	Tartarian Soul x2 	>> +3 <<
+	
 				--DO NOT GET: Feet(Only stun)
 
 --	Savant's > Arbatel (Empy)=Sortie
@@ -71,7 +78,7 @@ function init_gear_sets()
 		sub="Genmei Shield",
 		ammo="Homiliary",
 		head="Befouled Crown",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Nyame Gauntlets",
 		legs="Agwu's Slops",
 		feet="Nyame Sollerets",
@@ -89,7 +96,7 @@ function init_gear_sets()
 		sub="Achaq Grip",
 		ammo="Homiliary",
 		head="Befouled Crown",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Nyame Gauntlets",
 		legs="Agwu's Slops",
 		feet="Nyame Sollerets",
@@ -107,7 +114,7 @@ function init_gear_sets()
 		sub="Achaq Grip",
 		ammo="Homiliary",
 		head="Befouled Crown",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands="Nyame Gauntlets",
 		legs="Agwu's Slops",
 		feet="Nyame Sollerets",
@@ -126,7 +133,7 @@ function init_gear_sets()
 		sub="Genmei Shield",
 		ammo="Staunch Tathlum +1",
 		head="Befouled Crown",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Nyame Gauntlets", augments={'Path: B',}},
 		legs="Agwu's Slops",
 		feet={ name="Nyame Sollerets", augments={'Path: B',}},
@@ -284,7 +291,7 @@ function init_gear_sets()
 		sub="Sors Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +4',}},
 		legs="Chironic Hose",
 		feet="Regal Pumps +1",
@@ -302,7 +309,7 @@ function init_gear_sets()
 		sub="Sors Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-		body="Arbatel Gown +2", 
+		body="Arbatel Gown +3", 
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +4',}},
 		legs="Chironic Hose",
 		feet="Regal Pumps +1",
@@ -321,7 +328,7 @@ function init_gear_sets()
 		sub="Sors Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Vanya Hood", augments={'MP+50','"Fast Cast"+10','Haste+2%',}},
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Telchine Gloves", augments={'Enh. Mag. eff. dur. +4',}},
 		legs="Chironic Hose",
 		feet="Regal Pumps +1",
@@ -363,7 +370,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		ammo="Pemphredo Tathlum",
 		head={ name="Telchine Cap", augments={'Enh. Mag. eff. dur. +10',}},
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +7',}},
 		feet="Telchine Pigaches",
 		neck="Incanter's Torque",
@@ -381,7 +388,7 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head="Arbatel Bonnet +2",
 		body={ name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +8',}},
-		hands="Arbatel Bracers +2",
+		hands="Arbatel Bracers +3",
 		legs={ name="Telchine Braconi", augments={'"Cure" potency +2%','Enh. Mag. eff. dur. +8',}},
 		feet={ name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +8',}},
 		neck="Incanter's Torque",
@@ -440,7 +447,7 @@ function init_gear_sets()
 		head="Acad. Mortar. +2", -- Scholars(Omen)
 		body="Acad. Gown +2",
 		hands="Kaykaus Cuffs +1",
-		legs="Arbatel Pants +1",
+		legs="Arbatel Pants +3",
 		feet="Acad. Loafers +2", --Omen
 })
 
@@ -450,7 +457,7 @@ function init_gear_sets()
 		head="",
 		body={ name="Cohort Cloak +1", augments={'Path: A',}},
 		hands="Kaykaus Cuffs +1",
-		legs="Arbatel Pants +2",
+		legs="Arbatel Pants +3",
 		feet="Acad. Loafers +2", --Omen
 })
 	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
@@ -553,12 +560,12 @@ function init_gear_sets()
 		ammo={ name="Ghastly Tathlum +1", augments={'Path: A',}},
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+2','INT+9','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		--head="Agwu's Cap",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		--hands="Agwu's Gages",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		--legs="Agwu's Slops",
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 	    neck="Incanter's Torque",
 		--neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist={ name="Acuity Belt +1", augments={'Path: A',}},
@@ -593,7 +600,7 @@ function init_gear_sets()
 		body="Amalric Doublet +1",
 		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 		neck="Incanter's Torque",
 		--neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Acuity Belt +1",
@@ -617,12 +624,12 @@ function init_gear_sets()
 		ammo="Ghastly Tathlum +1",
 		head={ name="Merlinic Hood", augments={'Mag. Acc.+2','INT+9','Mag. Acc.+18 "Mag.Atk.Bns."+18',}},
 		--head="Agwu's Cap",
-		body="Arbatel Gown +2",
+		body="Arbatel Gown +3",
 		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		--hands="Agwu's Gages",
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
 		--legs="Agwu's Slops",
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 		neck="Incanter's Torque",
 		--neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Acuity Belt +1",
@@ -647,7 +654,7 @@ function init_gear_sets()
 		body="Amalric Doublet +1",
 		hands={ name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}},
 		legs={ name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
-		feet="Arbatel Loafers +2",
+		feet="Arbatel Loafers +3",
 		neck="Incanter's Torque",
 		--neck={ name="Argute Stole +2", augments={'Path: A',}},
 		waist="Acuity Belt +1",
@@ -725,13 +732,13 @@ function init_gear_sets()
     -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
     sets.buff['Ebullience'] = {head="Arbatel Bonnet +2"}
     sets.buff['Rapture'] = {head="Arbatel Bonnet +2"}
-    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +2"}
-    sets.buff['Immanence'] = {hands="Arbatel Bracers +2"}
-    sets.buff['Penury'] = {legs="Arbatel Pants +2"}
-    sets.buff['Parsimony'] = {legs="Arbatel Pants +2"}
+    sets.buff['Perpetuance'] = {hands="Arbatel Bracers +3"}
+    sets.buff['Immanence'] = {hands="Arbatel Bracers +3"}
+    sets.buff['Penury'] = {legs="Arbatel Pants +3"}
+    sets.buff['Parsimony'] = {legs="Arbatel Pants +3"}
     sets.buff['Celerity'] = {feet="Peda. Loafers +1"}
     sets.buff['Alacrity'] = {feet="Peda. Loafers +1"}
-    sets.buff['Klimaform'] = {feet="Arbatel Loafers +2"}
+    sets.buff['Klimaform'] = {feet="Arbatel Loafers +3"}
 	sets.HPDown = {}
 	sets.buff.Doom = set_combine(sets.buff.Doom, {})
 	sets.buff['Light Arts'] = {legs="Academic's Pants +2"}

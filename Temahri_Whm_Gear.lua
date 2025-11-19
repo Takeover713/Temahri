@@ -2,7 +2,7 @@
 function user_setup()
     state.OffenseMode:options('Normal','Acc')
     state.CastingMode:options('Normal','Resistant')
-    state.IdleMode:options('Normal','PDT')
+    state.IdleMode:options('Normal','PDT','MDT')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
 	state.ResistDefenseMode:options('MEVA')
@@ -54,7 +54,7 @@ function init_gear_sets()
 		legs="Ebers Pant. +3",
 		feet="Ebers Duckbills +3",
 		neck="Loricate Torque +1",
-		waist="Plat. Mog. Belt",
+		waist="Null Belt",
 		left_ear="Etiolation Earring",
 		right_ear="Eabani Earring",
 		left_ring="Murky Ring",
@@ -80,6 +80,22 @@ function init_gear_sets()
 		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
 }			
 		
+	sets.idle.MDT = {
+		main="Daybreak",
+		ammo="Staunch Tathlum +1",
+		head="Bunzi's Hat",
+		neck="Warder's Charm +1",
+		body="Bunzi's Robe",
+		hands="Bunzi's Gloves",
+		legs="Bunzi's Pants",
+		feet="Bunzi's Sabots",
+		waist="Carrier's Sash",
+		left_ear="Etiolation Earring",
+		right_ear="Eabani Earring",
+		left_ring="Inyanga Ring",
+		right_ring="Defending Ring",
+		back={ name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity-10','Phys. dmg. taken-10%',}},
+}
 
 	sets.idle.Weak = {
 		main="Daybreak",
