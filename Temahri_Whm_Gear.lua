@@ -368,7 +368,7 @@ function init_gear_sets()
 	right_ear="Ebers Earring +2",
 	left_ring="Menelaus's Ring",
 	right_ring="Haoma's Ring",
-	back={ name="Alaunus's Cape", augments={'"Fast Cast"+10',}},
+	back={ name="Alaunus's Cape", augments={'"Fast Cast"+10','Damage taken-5%',}},
 }
 
 	sets.midcast.StatusRemoval = {
@@ -641,10 +641,8 @@ function select_default_macro_book()
 	set_macro_page(1, 1)
 end
 	
-function sub_job_change(new,old)
-send_command('wait 5;input /lockstyleset 20')
+function user_job_lockstyle()
+	windower.chat.input('/lockstyleset 13')
 end
-
-send_command('wait 5;input /lockstyleset 20')
 
 send_command('exec init.txt')
